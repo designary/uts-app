@@ -1,0 +1,429 @@
+<header class="header header-login {{ processRegRoutes() ? 'process-reg-routes' : '' }}">
+    <div class="header-inner">
+        <div class="header-item header-logo">
+            <a routerLink="/home" class="header-item-logo">
+                <div class="header-item-logo-text">
+                    Faculty of Transdisciplinary Innovation
+                </div>
+            </a>
+        </div>
+    </div>
+</header>
+
+<div class="container page-login">
+    <div class="login-content login" *ngIf="router.url === '/login'">
+        <h1 class="login-title">Log in to Zestlin</h1>
+        <form class="form-login">
+            <div class="row row-block">
+                <input class="login-user-name width-100" type="text" value="Email Address">
+            </div>
+            <div class="row row-block">
+                <input class="login-password width-100" type="password" value="Password">
+            </div>
+            <div class="row row-block">
+                <button routerLink="/login/welcome" class="button button-orange">Start Connecting</button>
+            </div>
+            <div class="row row-block">
+                <p class="login-help-text">Forgot your username or password? <a routerLink="/login/password">Click Here.</a></p>
+                <p class="login-help-text">Not part of the FTDI platform yet? <a routerLink="/login/register">Register your eligibility.</a></p>
+            </div>
+        </form>
+    </div>
+    <div class="login-content welcome" *ngIf="router.url === '/login/welcome'">
+        <h1 class="login-title">Welcome Back, Sam!</h1>
+        <form class="row form-login">
+            <div class="row-inner row-margin-2">
+                <div class="login-image">
+                    <img src="http://fillmurray.com/140/140">
+                </div>
+                <div class="login-user-details">
+                    <div class="row row-block">
+                        <p class="login-text-filled">Sam Walker</p>
+                    </div>
+                    <div class="row row-margin">
+                        <div class="row-inner row-margin">
+                            <input class="login-password width-100" type="password" value="Password">
+                        </div>
+                        <a class="text-login" routerLink="/login/password">Forget me</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-block width-100">
+                <div class="row-inner row-margin">
+                    <button routerLink="/login/create" class="button button-orange">Start Connecting</button>
+                    <p>Not you? <a routerLink="/login/register">Log in to another account or register</a>.</p>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="login-content-progress-container create-container" *ngIf="router.url === '/login/create'">
+        <div class="progress-bar-container">
+            <div class="progress-bar-block">
+                <div class="progress-bar-marker progress-bar-marker-left icon-tick">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41.5 49"><title>Progress Bar Marker</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="41.5 37.86 20.75 49 0 37.86 0 0 41.5 0 41.5 37.86"/></g></g></svg>
+                </div>
+                <div class="progress-bar-marker progress-bar-marker-middle icon-tick">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41.5 49"><title>Progress Bar Marker</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="41.5 37.86 20.75 49 0 37.86 0 0 41.5 0 41.5 37.86"/></g></g></svg>
+                </div>
+                <div class="progress-bar-marker progress-bar-marker-right icon-tick">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41.5 49"><title>Progress Bar Marker</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="41.5 37.86 20.75 49 0 37.86 0 0 41.5 0 41.5 37.86"/></g></g></svg>
+                </div>
+                <div class="progress-bar-left"></div>
+                <div class="progress-bar-middle"></div>
+                <div class="progress-bar-right"></div>
+            </div>
+        </div>
+        <div class="login-content create">
+            <h1 class="login-title">Create your account</h1>
+            <form class="form-login">
+                <div class="row row-block">
+                    <div class="input-text login-text-filled">Samuel Walker</div>
+                </div>
+                <div class="row row-block">
+                    <div class="row-inner">
+                        <div class="input-text width-90 input-left login-text-gray">samuel.walker@student.uts.edu.au</div>
+                        <div class="icon icon-help input-right" tooltip="You can add a new email address
+in the next step!"></div>
+                    </div>
+                </div>
+                <div class="row row-block">
+                    <input class="login-password width-100" type="password" placeholder="Password">
+                    <a class="login-mini-link">Show Password</a>
+                </div>
+                <div class="row row-block">
+                    <input class="login-password width-100" type="password" placeholder="Confirm Password">
+                </div>
+                <div class="row row-block width-100">
+                    <label class="label-checkbox">
+                        <input type="checkbox" name="seeking" value="Remember Me"> Remember Me
+                    </label>
+                    <label class="label-checkbox">
+                        <input type="checkbox" name="offering" value="Offering"> I have read and accept the <a href="#">terms &amp; conditions</a>.
+                    </label>
+                </div>
+                <div class="row">
+                    <button routerLink="/login/confirm" class="button button-orange input-right button-width-auto">Next</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="login-content-progress-container confirm-container" *ngIf="router.url === '/login/confirm'">
+        <div class="progress-bar-container">
+            <div class="progress-bar-block">
+                <div class="progress-bar-marker progress-bar-marker-left icon-tick">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41.5 49"><title>Progress Bar Marker</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="41.5 37.86 20.75 49 0 37.86 0 0 41.5 0 41.5 37.86"/></g></g></svg>
+                </div>
+                <div class="progress-bar-marker progress-bar-marker-middle icon-tick">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41.5 49"><title>Progress Bar Marker</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="41.5 37.86 20.75 49 0 37.86 0 0 41.5 0 41.5 37.86"/></g></g></svg>
+                </div>
+                <div class="progress-bar-marker progress-bar-marker-right icon-tick">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41.5 49"><title>Progress Bar Marker</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="41.5 37.86 20.75 49 0 37.86 0 0 41.5 0 41.5 37.86"/></g></g></svg>
+                </div>
+                <div class="progress-bar-left"></div>
+                <div class="progress-bar-middle"></div>
+                <div class="progress-bar-right"></div>
+            </div>
+        </div>
+        <div class="login-content confirm">
+            <h1 class="login-title">Looks like this is your first time here!</h1>
+            <p class="login-message">Please confirm your details:</p>
+            <form class="form-login">
+                <div class="login-image">
+                    <img src="http://fillmurray.com/140/140">
+                </div>
+                <div class="login-user-details">
+                    <div class="row row-block">
+                        <div class="row-inner">
+                            <label><span class="icon icon-person"></span>Details<sup class="asterisk">*</sup></label>
+                            <input class="login-user-name width-100" type="text">
+                        </div>
+                    </div>
+                    <div class="row row-block">
+                        <div class="row-inner">
+                            <p class="login-text login-text-italic login-text-no-margin">samuel.walker</p>
+                            <p class="login-text login-text-italic login-text-light">@student.uts.edu.au</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <label><span class="icon icon-graduation"></span>Education</label>
+                </div>
+                <div class="row row-block">
+                    <div class="row-inner">
+                        <p class="login-text login-text-italic login-text-margin-bottom">Bachelor of Creative Intelligence and Innovation</p>
+                        <p class="login-text login-text-italic login-text-margin-bottom">Bachelor of Integrated Product Design</p>
+                        <p class="login-text login-text-italic">2017</p>
+                    </div>
+                </div>
+                <div class="row row-time-period">
+                    <label><span class="icon icon-calendar"></span>Time Period<sup class="asterisk">*</sup></label>
+                    <input class="width-40" value="" aria-label="Start date" autocomplete="off" aria-autocomplete="true" placeholder="Start Date" type="date" />
+                </div>
+                <div class="row">
+                    <button routerLink="/login/add-details" class="button button-orange input-right button-width-auto">Next</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="login-content-progress-container add-details-container" *ngIf="router.url === '/login/add-details'">
+        <div class="progress-bar-container">
+            <div class="progress-bar-block">
+                <div class="progress-bar-marker progress-bar-marker-left icon-tick">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41.5 49"><title>Progress Bar Marker</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="41.5 37.86 20.75 49 0 37.86 0 0 41.5 0 41.5 37.86"/></g></g></svg>
+                </div>
+                <div class="progress-bar-marker progress-bar-marker-middle icon-tick">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41.5 49"><title>Progress Bar Marker</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="41.5 37.86 20.75 49 0 37.86 0 0 41.5 0 41.5 37.86"/></g></g></svg>
+                </div>
+                <div class="progress-bar-marker progress-bar-marker-right icon-tick">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41.5 49"><title>Progress Bar Marker</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="41.5 37.86 20.75 49 0 37.86 0 0 41.5 0 41.5 37.86"/></g></g></svg>
+                </div>
+                <div class="progress-bar-left"></div>
+                <div class="progress-bar-middle"></div>
+                <div class="progress-bar-right"></div>
+            </div>
+        </div>
+        <div class="login-content add-details">
+            <h1 class="login-title">Fill in your profile</h1>
+            <p class="login-message">Tell us a bit more about yourself:</p>
+            <form>
+                <div class="row">
+                    <label><span class="icon icon-contact"></span>Contact Details</label>
+                </div>
+                <div class="row">
+                    <div class="row-inner">
+                        <div class="width-20 input-left">
+                            <span class="icon icon-triangle-down"></span>
+                            <select class="width-100">
+                                <option value="mobile" selected>m</option>
+                                <option value="email">e</option>
+                                <option value="website">w</option>
+                            </select>
+                        </div>
+                        <span class="icon icon-close-circle"></span>
+                        <input class="width-75 input-right" value="" aria-label="" maxlength="10" autocomplete="off" aria-autocomplete="true" placeholder="" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="row-inner">
+                        <div class="width-20 input-left">
+                            <span class="icon icon-triangle-down"></span>
+                            <select class="width-100">
+                                <option value="mobile">m</option>
+                                <option value="email" selected>e</option>
+                                <option value="website">w</option>
+                            </select>
+                        </div>
+                        <span class="icon icon-close-circle"></span>
+                        <input class="width-75 input-right" value="" aria-label="" maxlength="10" autocomplete="off" aria-autocomplete="true" placeholder="" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="row-inner">
+                        <div class="width-20 input-left">
+                            <span class="icon icon-triangle-down"></span>
+                            <select class="width-100">
+                                <option value="mobile">m</option>
+                                <option value="email">e</option>
+                                <option value="website" selected>w</option>
+                            </select>
+                        </div>
+                        <span class="icon icon-close-circle"></span>
+                        <input class="width-75 input-right" value="" aria-label="" maxlength="10" autocomplete="off" aria-autocomplete="true" placeholder="" />
+                    </div>
+                </div>
+                <div class="row row-block">
+                    <div class="link-add">
+                        <a (click)="showDialog = !showDialog">Add +</a>
+                    </div>
+                </div>
+                <div class="row row-block">
+                    <div class="row-inner width-100 confirm-dropdown">
+                        <span class="icon icon-triangle-down"></span>
+                        <select class="width-90 input-left">
+                            <option value="" selected disabled>Select your primary email address</option>
+                            <option value="samuel.walker@student.uts.edu.au">samuel.walker@student.uts.edu.au</option>
+                            <option value="samuel.walker@alumni.uts.edu.au">samuel.walker@alumni.uts.edu.au</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <div class="icon icon-help input-right" tooltip="Select your primary email address email address here!">
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-block">
+                    <label><span class="icon icon-bio"></span>Bio</label>
+                    <textarea class="width-100" value="" aria-label="" rows="4" cols="50" max-length="300" autocomplete="off" aria-autocomplete="true" placeholder="300 character limit"></textarea>
+                </div>
+                <div class="row">
+                    <button routerLink="/login/add-work" class="button button-orange input-right button-width-auto">Next</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="login-content-progress-container add-work-container" *ngIf="router.url === '/login/add-work'">
+        <div class="progress-bar-container">
+            <div class="progress-bar-block">
+                <div class="progress-bar-marker progress-bar-marker-left icon-tick">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41.5 49"><title>Progress Bar Marker</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="41.5 37.86 20.75 49 0 37.86 0 0 41.5 0 41.5 37.86"/></g></g></svg>
+                </div>
+                <div class="progress-bar-marker progress-bar-marker-middle icon-tick">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41.5 49"><title>Progress Bar Marker</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="41.5 37.86 20.75 49 0 37.86 0 0 41.5 0 41.5 37.86"/></g></g></svg>
+                </div>
+                <div class="progress-bar-marker progress-bar-marker-right icon-tick">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41.5 49"><title>Progress Bar Marker</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="41.5 37.86 20.75 49 0 37.86 0 0 41.5 0 41.5 37.86"/></g></g></svg>
+                </div>
+                <div class="progress-bar-left"></div>
+                <div class="progress-bar-middle"></div>
+                <div class="progress-bar-right"></div>
+            </div>
+        </div>
+        <div class="login-content add-work">
+            <h1 class="login-title">Add your work</h1>
+            <p class="login-message">Fill in your professional side:</p>
+            <form>
+                <div class="row">
+                    <label><span class="icon icon-briefcase"></span>Work</label>
+                </div>
+                <div class="row row-block work">
+                    <div class="row-inner">
+                        <span class="icon icon-close-circle"></span>
+                        <input class="width-100 input-right" value="" aria-label="" maxlength="10" autocomplete="off" aria-autocomplete="true" placeholder="Current Position at New Job" />
+                    </div>
+                    <div class="row-inner">
+                        <span class="icon icon-close-circle"></span>
+                        <input class="width-100 input-right" value="" aria-label="" maxlength="10" autocomplete="off" aria-autocomplete="true" placeholder="Graduate at Westpac" />
+                    </div>
+                    <div class="link-add">
+                        <a (click)="showDialog = !showDialog">Add +</a>
+                    </div>
+                </div>
+                <div class="row row-block">
+                    <label>Company</label>
+                    <div class="row-inner row-duo">
+                        <input class="width-50 input-left" value="" aria-label="" maxlength="10" autocomplete="off" aria-autocomplete="true" placeholder="New Job" />
+                        <input class="width-50 input-right" value="" aria-label="" maxlength="10" autocomplete="off" aria-autocomplete="true" placeholder="Current Job" />
+                    </div>
+                    <div class="row-inner row-duo">
+                        
+                        
+                    </div>
+                    <div class="row-inner row-duo">
+                        <div class="width-50 input-left">
+                            <label>City/Town</label>
+                            <input class="width-100" value="" aria-label="" maxlength="10" autocomplete="off" aria-autocomplete="true" placeholder="Place" />
+                        </div>
+                        <div class="width-50 input-right">
+                            <label>Time Period</label>
+                            <div class="row row-time-period">
+                                <div class="row-inner">
+                                    <span class="icon icon-calendar"></span>
+                                    <input class="edit-profile-input width-40" value="" aria-label="Start date" autocomplete="off" aria-autocomplete="true" placeholder="Start Date" type="date" />
+                                    <span class="icon icon-calendar"></span>
+                                    <input class="edit-profile-input width-40" value="" aria-label="End date" autocomplete="off" aria-autocomplete="true" placeholder="End Date" type="date" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-inner description">
+                        <label>Description</label>
+                        <textarea class="width-100" value="" aria-label="" rows="4" cols="50" max-length="300" autocomplete="off" aria-autocomplete="true" placeholder="300 character limit"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <button routerLink="/login/pending" class="button button-orange input-right button-width-auto">Finish</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="login-content pending" *ngIf="router.url === '/login/pending'">
+        <h1 class="login-title">Your account request is pending approval</h1>
+        <div class="row row-block">
+            <p class="login-text">
+                We've sent your request to our administration team for approval.
+            </p>
+            <p class="login-text">
+                In the meantime, keep an eye on your email inbox and we'll get back to you.
+            </p>
+        </div>
+        <div class="row">
+            <button routerLink="/login/register" class="button button-orange input-right button-width-auto">Ok</button>
+        </div>
+    </div>
+    <div class="login-content register" *ngIf="router.url === '/login/register'">
+        <h1 class="login-title">Register New Members</h1>
+        <div class="row row-block">
+            <p class="login-text">
+                To register new members to Zestlin, download the templates from the relevant link below and input the data into the relevant columns.
+            </p>
+            <p class="login-text">
+                You will be required to reupload the completed file.
+            </p>
+        </div>
+        <div class="row row-block buttons-row">
+            <button class="button button-orange">Students</button>
+            <button class="button button-orange">FTDI Staff</button>
+            <button class="button button-orange">Industry Partner</button>
+        </div>
+        <div class="row">
+            <p class="login-text">
+                To upload data spreadsheet, <a href="#">click here.</a>
+            </p>
+        </div>
+    </div>
+    <div class="login-content password" *ngIf="router.url === '/login/password'">
+        <h1 class="login-title">Forgot Your Password</h1>
+        <form>
+            <div class="row row-block">
+                <p class="login-text">
+                    You can enter your student, staff or alumni email addresses as well as any personal email you set up as your primary contact email.
+                </p>
+            </div>
+            <div class="row row-block">
+                <input class="width-100" value="" aria-label="Email Address" autocomplete="off" aria-autocomplete="true" placeholder="Email Address" type="text" />
+            </div>
+            <div class="row">
+                <button class="button button-orange input-right button-width-auto">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div class="login-content send-details" *ngIf="router.url === '/login/send-details'">
+        <h1 class="login-title">Send us your details</h1>
+        <form>
+            <div class="row row-block">
+                <p class="login-text">
+                    Interested in joining the Faculty of Transdisciplinary Innovation's Alumni Platform? Send through your details and we'll see what we can do!
+                </p>
+            </div>
+            <div class="row">
+                <label><span class="icon icon-person"></span>Details</label>
+            </div>
+            <div class="row row-block">
+                <div class="row-inner row-margin">
+                    <input class="width-100" value="" aria-label="Name" autocomplete="off" aria-autocomplete="true" placeholder="Name" type="text" />
+                </div>
+                <div class="row-inner row-margin">
+                    <input class="width-100" value="" aria-label="Email" autocomplete="off" aria-autocomplete="true" placeholder="Email" type="text" />
+                </div>
+                <p class="login-mini-link">This is the email we contact you on.</p>
+            </div>
+            <div class="row">
+                <label><span class="icon icon-graduation"></span>Education</label>
+            </div>
+            <div class="row row-block">
+                <div class="row-inner width-100 confirm-dropdown">
+                    <span class="icon icon-triangle-down"></span>
+                    <select class="width-100">
+                        <option value="" selected disabled>Select your FTDI relationship</option>
+                        <option value="Student">Student</option>
+                        <option value="Staff">Staff</option>
+                        <option value="Alumni">Alumni</option>
+                        <option value="Industry partner">Industry partner</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <button class="button button-orange input-right button-width-auto">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

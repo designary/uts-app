@@ -1,0 +1,42 @@
+<app-feature-hero></app-feature-hero>
+<app-statistics></app-statistics>
+<div class="container page-directory">
+    <div class="block-welcome">
+        <div class="col-side">
+            <h2 class="page-title">Network</h2>
+        </div>
+        <div class="col-main">
+            <div class="welcome-search">
+                <span class="icon icon-search"></span>
+                <input class="search-input" type="text" autocomplete="off" role="combobox" aria-autocomplete="list" placeholder="Search...">
+            </div>
+            <a class="link-take-me"><span class=""></span>Find Me Someone</a>
+        </div>
+    </div>
+    <div class="page-directory-wrapper">
+        <div class="col-side">
+            <app-sidebar-filter-item></app-sidebar-filter-item>
+        </div>
+        <div class="col-main">
+            <div class="user-cards">
+                <div class="user-cards-row">
+                    <app-user-card></app-user-card>
+                    <app-user-card></app-user-card>
+                </div>
+                <div class="user-cards-row">
+                    <app-user-card></app-user-card>
+                    <app-user-card></app-user-card>
+                </div>
+                <div class="user-cards-row">
+                    <app-user-card></app-user-card>
+                    <app-user-card></app-user-card>
+                </div>
+                <div class="user-cards-row">
+                    <app-user-card></app-user-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-create-broadcast [(visible)]="showDialog">
+</app-create-broadcast>

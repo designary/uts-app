@@ -1,0 +1,162 @@
+@charset "UTF-8";
+
+// Variables & Mixins
+@import '~styles/partials/fonts';
+@import '~styles/partials/variables';
+@import '~styles/partials/mixins';
+@import '~styles/partials/images';
+
+html,
+body {
+    font-family: $font-family-base;
+    font-style: normal;
+    font-weight: 400;
+    overflow-x: hidden;
+    width: 100vw;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-family-heading;
+}
+h1 {
+    font-weight: $weight-bold;
+}
+a:hover {
+    text-decoration: none;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    padding: 20px 16px;
+    width: 100%;
+
+    @include mq(tablet) {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        padding-top: 50px;
+    }
+}
+.block-edit {
+    @include clearfix;
+    padding-bottom: 45px;
+    @include mq(tablet) {
+        margin-right: -30px;
+    }
+    .button-edit {
+        color: $color-gray-base;
+        display: inline-block;
+        float: right;
+        font-size: 48px;
+        margin-left: 20px;
+        transition: color 0.2s ease;
+        &:hover {
+            color: $color-orange1;
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+}
+.tribe-badge {
+    display: inline-block;
+    height: 44px;
+    margin-right: 10px;
+    position: relative;
+    vertical-align: middle;
+    width: 38px;
+    &.entrepreneurship {
+        svg {
+            fill: $color-purple1;
+        }
+    }
+    &.intrepreneurship {
+        svg {
+            fill: $color-green1;
+        }
+    }
+    &.knowledge {
+        svg {
+            fill: $color-blue3;
+        }
+    }
+    svg {
+        -webkit-filter: drop-shadow(2px 2px 2px $color-gray);
+        fill: $color-gray-light;
+        filter: drop-shadow(2px 2px 2px $color-gray);
+    }
+}
+.project-cards,
+.recent-activity-cards {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding-top: 20px;
+    @include mq(tablet-wide) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+.button {
+    appearance: none;
+    border: 0;
+    box-shadow: 2px 2px 2px $color-gray;
+    font-size: 18px;
+    padding: 10px;
+    text-transform: uppercase;
+    &:focus {
+        outline: none;
+    }
+    &.button-orange {
+        background-color: $color-orange1;
+        color: $color-white;
+    }
+    &.button-gray {
+        background-color: $color-gray-lighter;
+    }
+    &.button-blue {
+        background-color: $color-blue3;
+        color: $color-white;
+    }
+    .button-right {
+        float: right;
+    }
+}
+.block-margin {
+    margin-bottom: 30px;
+}
+.backdrop {
+    background-color: rgba($color-gray-base, 0.5);
+    content: '';
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: $zIndex-10;
+}
+.block-title {
+    border-bottom: 1px solid $color-gray-darker;
+    font-family: $font-family-heading;
+    font-size: 20px;
+    font-weight: $weight-bold;
+    letter-spacing: 0.8px;
+    margin-top: 0;
+    width: 100%;
+    @include mq(tablet-wide) {
+        font-size: 26px;
+    }
+    .icon {
+        display: block;
+        color: $color-gray-light;
+        float: right;
+        font-size: 10px;
+        margin-top: 13px;
+        @include mq(tablet-wide) {
+            margin-top: 14px;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

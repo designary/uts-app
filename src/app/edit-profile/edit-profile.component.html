@@ -1,0 +1,211 @@
+<div class="container page-edit-profile">
+    <div class="edit-profile-pic-section">
+        <div class="edit-profile-pic">
+            <div class="edit-profile-pic-overlay icon icon-camera"></div>
+            <img class="edit-profile-image" src="http://www.fillmurray.com/150/150">
+        </div>
+    </div>
+    <div class="edit-profile-main">
+        <div class="edit-profile-main-inner">
+            <h1>Edit Profile</h1>
+            <form>
+                <div class="row row-block">
+                    <label><span class="icon icon-details"></span>Name</label>
+                    <input class="edit-profile-label-name width-65" value="" aria-label="Name" maxlength="40" autocomplete="off" aria-autocomplete="true" placeholder="Name" type="text" />
+                    <input class="edit-profile-label-year width-30 input-right" value="" aria-label="Year" maxlength="4" autocomplete="off" aria-autocomplete="true" placeholder="Year" type="year" />
+                </div>
+                <div class="row row-block">
+                    <label><span class="icon icon-home"></span>Location</label>
+                    <span class="icon icon-location icon-input"></span>
+                    <input class="width-100" value="" aria-label="Location" maxlength="200" autocomplete="off" aria-autocomplete="true" placeholder="" type="text" />
+                </div>
+                <div class="row row-block">
+                    <label><span class="icon icon-graduation"></span>Education</label>
+                    <div class="row-inner width-100">
+                        <span class="icon icon-triangle-down"></span>
+                        <select class="width-100">
+                            <option value="Bachelor of Creative Intelligence and Innovation" selected>Bachelor of Creative Intelligence and Innovation</option>
+                            <option value="Bachelor of Integrated Product Design">Bachelor of Integrated Product Design</option>
+                            <option value="MBA at Stanford University">MBA at Stanford University</option>
+                        </select>
+                    </div>
+                    <div class="row-inner">
+                        <span class="icon icon-triangle-down"></span>
+                        <select class="width-100">
+                            <option value="Bachelor of Creative Intelligence and Innovation">Bachelor of Creative Intelligence and Innovation</option>
+                            <option value="Bachelor of Integrated Product Design" selected>Bachelor of Integrated Product Design</option>
+                            <option value="MBA at Stanford University">MBA at Stanford University</option>
+                        </select>
+                    </div>
+                    <div class="row-inner">
+                        <span class="icon icon-close-circle"></span>
+                        <select class="width-100">
+                            <option value="Bachelor of Creative Intelligence and Innovation">Bachelor of Creative Intelligence and Innovation</option>
+                            <option value="Bachelor of Integrated Product Design">Bachelor of Integrated Product Design</option>
+                            <option value="MBA at Stanford University" selected>MBA at Stanford University</option>
+                        </select>
+                    </div>
+                    <div class="link-add">
+                        <a (click)="showDialog = !showDialog">Add +</a>
+                    </div>
+                </div>
+                <div class="row row-block">
+                    <label><span class="icon icon-telephone"></span>Contact Details</label>
+                    <div class="row">
+                        <div class="row-inner width-20">
+                            <span class="icon icon-triangle-down"></span>
+                            <select class="width-100">
+                                <option value="mobile" selected>m</option>
+                                <option value="email">e</option>
+                                <option value="website">w</option>
+                            </select>
+                        </div>
+                        <input class="edit-profile-label-contact width-75 input-right" value="" aria-label="" maxlength="10" autocomplete="off" aria-autocomplete="true" placeholder="" />
+                    </div>
+                    <div class="row">
+                        <div class="row-inner width-20">
+                            <span class="icon icon-triangle-down"></span>
+                            <select class="width-100">
+                                <option value="mobile">m</option>
+                                <option value="email" selected>e</option>
+                                <option value="website">w</option>
+                            </select>
+                        </div>
+                        <input class="edit-profile-label-contact width-75 input-right" value="" aria-label="" maxlength="10" autocomplete="off" aria-autocomplete="true" placeholder="" />
+                    </div>
+                    <div class="row">
+                        <div class="row-inner width-20">
+                            <span class="icon icon-triangle-down"></span>
+                            <select class="width-100">
+                                <option value="mobile">m</option>
+                                <option value="email">e</option>
+                                <option value="website" selected>w</option>
+                            </select>
+                        </div>
+                        <input class="edit-profile-label-contact width-75 input-right" value="" aria-label="" maxlength="10" autocomplete="off" aria-autocomplete="true" placeholder="" />
+                    </div>
+                    <div class="link-add">
+                        <a (click)="showDialog = !showDialog">Add +</a>
+                    </div>
+                </div>
+                <div class="row row-block row-checkbox width-100">
+                    <input type="checkbox" name="seeking" value="Seeking" checked> <span class="label-checkbox">Seeking</span>
+                    <input type="checkbox" name="offering" value="Offering"> <span class="label-checkbox">Offering</span>
+                    <input type="checkbox" name="neither" value="Neither"> <span class="label-checkbox">Neither</span>
+                </div>
+                <div class="row row-block">
+                    <textarea class="width-100" value="" aria-label="" rows="4" cols="50" max-length="300" autocomplete="off" aria-autocomplete="true" placeholder="300 word limit"></textarea>
+                </div>
+                <div class="row row-block">
+                    <label><span class="icon icon-bio"></span>Bio</label>
+                    <textarea class="width-100" value="" aria-label="" rows="4" cols="50" max-length="300" autocomplete="off" aria-autocomplete="true" placeholder="300 word limit"></textarea>
+                </div>
+                <div class="row row-block">
+                    <label><span class="icon icon-heart"></span>Tribes</label>
+                    <ul class="list-tribes">
+                        <li class="list-tribe-item">
+                            <span class="tribe-badge entrepreneurship">
+                                <div class="icon icon-remove-circle-inverse"></div>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41.5 49"><title>Tribe Badge</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="41.5 37.86 20.75 49 0 37.86 0 0 41.5 0 41.5 37.86"/></g></g></svg>
+                            </span>
+                            <span class="list-tribe-label">
+                                Entrepreneurship
+                            </span>
+                        </li>
+                        <li class="list-tribe-item">
+                            <span class="tribe-badge intrepreneurship">
+                                <div class="icon icon-remove-circle-inverse"></div>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41.5 49"><title>Tribe Badge</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="41.5 37.86 20.75 49 0 37.86 0 0 41.5 0 41.5 37.86"/></g></g></svg>
+                            </span>
+                            <span class="list-tribe-label">
+                                Intrepreneurship
+                            </span>
+                        </li>
+                        <li class="list-tribe-item">
+                            <span class="tribe-badge knowledge">
+                                <div class="icon icon-remove-circle-inverse"></div>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41.5 49"><title>Tribe Badge</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="41.5 37.86 20.75 49 0 37.86 0 0 41.5 0 41.5 37.86"/></g></g></svg>
+                            </span>
+                            <span class="list-tribe-label">
+                                Knowledge Creator
+                            </span>
+                        </li>
+                        <li class="list-tribe-item list-tribe-add">
+                            <span class="tribe-badge">
+                                <span class="icon icon-plus-circle-inverse"></span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41.5 49"><title>Tribe Badge</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="41.5 37.86 20.75 49 0 37.86 0 0 41.5 0 41.5 37.86"/></g></g></svg>
+                            </span>
+                            <span class="list-tribe-label link-add">
+                                <a (click)="showDialog = !showDialog">Add +</a>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row row-block">
+                    <label><span class="icon icon-briefcase"></span>Work</label>
+                    <div class="row-inner row-margin">
+                        <span class="icon icon-close-circle"></span>
+                        <input class="edit-profile-input width-100" value="" aria-label="Name" maxlength="100" autocomplete="off" aria-autocomplete="true" placeholder="CEO of Westpac" type="text" />
+                    </div>
+                    <div class="row-inner row-margin">
+                        <span class="icon icon-close-circle"></span>
+                        <input class="edit-profile-input width-100" value="" aria-label="Name" maxlength="100" autocomplete="off" aria-autocomplete="true" placeholder="Basketball Coach" type="text" />
+                    </div>
+                    <div class="link-add">
+                        <a (click)="showDialog = !showDialog">Add +</a>
+                    </div>
+                </div>
+                <div class="row row-block">
+                    <label><span class="icon icon-briefcase"></span>Projects</label>
+                    <div class="project-cards">
+                        <div class="post-card-vertical">
+                            <app-post-card></app-post-card>
+                        </div>
+                        <div class="post-card-vertical">
+                            <app-post-card></app-post-card>
+                        </div>
+                        <div class="post-card-vertical">
+                            <app-post-card></app-post-card>
+                        </div>
+                    </div>
+                    <div class="project-cards">
+                        <div routerLink="/project/edit" (click)="onLoadRoute()" class="post-card-vertical-add">
+                            <app-post-card></app-post-card>
+                        </div>
+                        <div class="post-card-vertical-empty">
+                            <app-post-card></app-post-card>
+                        </div>
+                        <div class="post-card-vertical-empty">
+                            <app-post-card></app-post-card>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="edit-profile-secondary">
+        <div class="edit-profile-secondary-inner">
+            <div class="block-edit">
+                <a routerLink="/profile" class="icon icon-close-circle-chunky button-edit">
+                </a>
+                <div class="icon icon-file-circle button-edit">
+                </div>
+            </div>
+            <div class="edit-profile-email-box">
+                <div class="row">
+                    <div class="row-inner row-margin-2">
+                        <label>System Email</label>
+                        <input class="edit-profile-input width-100" value="" aria-label="System Email" maxlength="100" autocomplete="off" aria-autocomplete="true" placeholder="" type="email" />
+                    </div>
+                    <div class="row-inner">
+                        <label>Password</label>
+                        <input class="edit-profile-input width-100" value="" aria-label="Password" maxlength="100" autocomplete="off" aria-autocomplete="true" placeholder="" type="password" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-profile-add-modal [(visible)]="showDialog">
+    <button (click)="showDialog = !showDialog">Close</button>
+</app-profile-add-modal>

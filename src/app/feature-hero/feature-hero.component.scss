@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+// Variables & Mixins
+@import '~styles/partials/fonts';
+@import '~styles/partials/variables';
+@import '~styles/partials/mixins';
+@import '~styles/partials/images';
+
+.feature-hero {
+    background-color: $color-gray-darker;
+    width: 100%;
+    .feature-hero-inner {
+        margin: 0 auto;
+        max-width: 1000px;
+        position: relative;
+        width: 100%;
+    }
+    .feature-hero-image {
+        background-image: url($feature-hero);
+        background-position: 50% bottom;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-top: 40%;
+        position: relative;
+        width: 100%;
+    }
+    .feature-hero-text-block {
+        bottom: 20px;
+        height: 80px;
+        left: 30px;
+        position: absolute;
+        width: 100%;
+    }
+    .feature-hero-title {
+        color: $color-white;
+        font-family: $font-family-heading;
+        font-size: 26px;
+        font-weight: 500;
+    }
+    .feature-hero-subtitle {
+        color: $color-orange2;
+        font-family: $font-family-base;
+        font-size: 16px;
+        letter-spacing: 1px;
+        margin-top: 0;
+    }
+}

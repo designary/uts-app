@@ -1,0 +1,263 @@
+@charset "UTF-8";
+
+// Variables & Mixins
+@import '~styles/partials/fonts';
+@import '~styles/partials/variables';
+@import '~styles/partials/mixins';
+@import '~styles/partials/images';
+@import '~styles/partials/forms';
+
+/* Edit Project Page. */
+
+.page-edit-project {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    @include mq(tablet) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    label {
+        color: $color-gray-dark;
+        font-family: $font-family-base;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        width: 100%;
+        .icon {
+            padding-right: 10px;
+            &:before {
+                font-size: 16px;
+            }
+        }
+    }
+    .row {
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        &.row-time-period {
+            .row-inner {
+                border: 1px solid $color-gray-light;
+                padding: 5px;
+                > * {
+                    display: inline-block;
+                }
+            }
+        }
+        input[type="date"] {
+            border: 0;
+            width: 40%;
+        }
+        .project-cards {
+            display: flex;
+            flex-direction: column;
+            padding-top: 0;
+            @include mq(tablet) {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            .post-card-vertical {
+                margin-bottom: 15px;
+                width: 100%;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                @include mq(tablet) {
+                    margin-bottom: 0;
+                    width: 32%;
+                }
+            }
+        }
+        .icon-description {
+            &:before {
+                font-size: 11px;
+            }
+        }
+        .icon-award {
+            &:before {
+                font-size: 16px;
+            }
+        }
+    }
+    .icon-input {
+        left: 20px;
+        position: absolute;
+        top: 40px;
+        &:before {
+            font-size: 22px;
+        }
+        & + input {
+            text-indent: 20px;
+        }
+    }
+}
+.edit-project-pic-section {
+    flex: 1;
+    order: 2;
+    @include mq(tablet) {
+        flex: 1;
+        order: 1;
+    }
+    .edit-project-pic {
+        background-color: $color-gray-light;
+        border-radius: 50%;
+        box-shadow: 3px 3px 5px 0 rgba($color-gray-base, 0.65);
+        display: block;
+        height: 140px;
+        overflow: hidden;
+        margin: 0 auto;
+        position: relative;
+        width: 140px;
+        @include mq(tablet) {
+            float: left;
+            margin-right: 20px;
+        }
+        .edit-project-image {
+            height: 100%;
+            width: 100%;
+        }
+        .edit-project-pic-overlay {
+            background-color: rgba($color-gray-base, 0.25);
+            display: block;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            &:before {
+                color: $color-white;
+                font-size: 48px;
+                position: absolute;
+                text-align: center;
+                top: calc(50% - 24px);
+                vertical-align: middle;
+                width: 100%;
+            }
+        }
+    }
+}
+.edit-project-main {
+    flex: 1;
+    order: 3;
+    h1 {
+        text-align: center;
+    }
+    @include mq(tablet) {
+        flex: 6;
+        order: 2;
+        h1 {
+            text-align: left;
+        }
+        .edit-project-main-inner {
+            padding-left: 5%;
+            padding-right: 10%;
+        }
+    }
+}
+.edit-project-secondary {
+    flex: 1;
+    order: 1;
+    @include mq(tablet) {
+        flex: 4;
+        order: 3;
+        padding-left: 5%;
+        padding-right: 5%;
+        .edit-profile-secondary-inner {
+            padding-left: 2%;
+            padding-right: 15%;
+        }
+    }
+}
+.block-edit {
+    @include clearfix;
+    padding-bottom: 45px;
+    @include mq(tablet) {
+        margin-right: -30px;
+    }
+    .glyphicon {
+        display: inline-block;
+        float: right;
+        margin-left: 10px;
+    }
+}
+.row .list-tribes {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    @include mq(phablet) {
+        flex-direction: row;
+    }
+}
+.edit-profile-email-box {
+    border: 1px solid $color-gray-light;
+    margin-bottom: 20px;
+    padding: 30px;
+    @include mq(phablet) {
+        margin-bottom: 100px;
+    }
+}
+.collaborator-list {
+    display: inline-block;
+    .collaborator-item {
+        background-color: $color-gray-darker;
+        border: 2px solid $color-gray-darker;
+        border-radius: 50%;
+        display: inline-block;
+        height: 70px;
+        overflow: hidden;
+        margin: 0 auto 10px;
+        position: relative;
+        vertical-align: middle;
+        width: 70px;
+        @include mq(tablet) {
+            margin-bottom: 0;
+            margin-right: 5px;
+        }
+        &.add {
+            background-color: transparent;
+            border: 0;
+            border-radius: 0;
+            height: 60px;
+            width: 60px;
+            @include mq(tablet) {
+                margin-left: 10px;
+            }
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        .collaborator-image {
+            height: 100%;
+            position: absolute;
+            width: 100%;
+        }
+        .icon-plus-circle-inverse {
+            color: $color-gray-lighter;
+            font-size: 60px;
+        }
+    }
+}
+.attach-buttons {
+    .icon {
+        background-color: $color-gray-darker;
+        border-radius: 50%;
+        color: $color-white;
+        display: block;
+        font-size: 28px;
+        height: 60px;
+        margin-bottom: 10px;
+        padding: 10px;
+        position: relative;
+        width: 60px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        &:before {
+            display: block;
+            padding-top: 5px;
+            text-align: center;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

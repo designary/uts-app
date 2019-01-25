@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+// Variables & Mixins
+@import '~styles/partials/fonts';
+@import '~styles/partials/variables';
+@import '~styles/partials/mixins';
+
+.post-card-activity {
+    float: right;
+    .icon {
+        font-size: 16px;
+        margin-left: 5px;
+        &:hover {
+            cursor: pointer;
+        }
+        span {
+            display: block;
+            font-family: $font-family-base;
+            font-size: 8px;
+            margin-top: 3px;
+        }
+    }
+    .icon-thumbs-up {
+        @include user-select;
+        margin-top: 3px;
+        &.active {
+            &:before {
+                color: $color-orange1;
+            }
+        }
+    }
+    .icon-comment {
+        line-height: 0.85;
+    }
+}
+:host-context(.post-modal-box) {
+    .post-card-activity {
+        .icon {
+            pointer-events: none;
+            &:hover {
+                cursor: none;
+            }
+        }
+    }
+}

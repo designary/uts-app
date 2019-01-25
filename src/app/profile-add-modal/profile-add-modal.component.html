@@ -1,0 +1,43 @@
+<div [@dialog] *ngIf="visible" class="backdrop-clear">
+    <div class="profile-add-modal-box">
+        <button *ngIf="closable" (click)="close()" aria-label="Close" class="dialog__close-btn icon icon-remove"></button>
+        <div class="row">
+            <div class="row-inner row-margin-2">
+                <label>Category</label>
+                <div class="row-inner">
+                    <span class="icon icon-triangle-down"></span>
+                    <select class="width-100">
+                        <option value="job" selected>Job</option>
+                        <option value="education">Education</option>
+                        <option value="promotion">Promotion</option>
+                        <option value="achievement">Achievement</option>
+                        <option value="relocation">Relocation</option>
+                        <option value="project/competition" selected>Project/Competition</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row-inner row-margin-2">
+                <label class="">City/Town</label>
+                <input class="edit-profile-input width-100" value="" aria-label="City/Town" maxlength="100" autocomplete="off" aria-autocomplete="true" placeholder="" type="text" />
+            </div>
+            <div class="row-inner row-margin-2">
+                <label class="">Description</label>
+                <input class="edit-profile-input width-100" value="" aria-label="Description" maxlength="100" autocomplete="off" aria-autocomplete="true" placeholder="" type="text" />
+            </div>
+            <div class="row row-time-period">
+                <label>Time Period</label>
+                <div class="row-inner row-margin-2">
+                    <span class="icon icon-calendar"></span>
+                    <input class="edit-profile-input width-40" value="" aria-label="Start date" autocomplete="off" aria-autocomplete="true" placeholder="Start Date" type="date" />
+                    <span class="icon icon-calendar"></span>
+                    <input class="edit-profile-input width-40" value="" aria-label="End date" autocomplete="off" aria-autocomplete="true" placeholder="End Date" type="date" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <button class="button button-orange width-45" type="button">Save</button>
+            <button class="button button-gray width-45 input-right" type="button">Cancel</button>
+        </div>
+    </div>
+</div>
+<div *ngIf="visible" class="backdrop-clear" (click)="close()"></div>

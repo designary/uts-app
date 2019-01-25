@@ -1,0 +1,72 @@
+<header class="header">
+    <div class="header-inner">
+        <div class="header-item header-logo">
+            <a routerLink="/home" class="header-item-logo"></a>
+            <div class="header-item-logo-text">
+                Faculty of Transdisciplinary Innovation
+            </div>
+        </div>
+        <div class="header-item header-nav">
+            <nav>
+                <ul class="header-nav-list">
+                    <li routerLinkActive="selected" class="header-nav-list-item">
+                        <a routerLink="/home">Home</a>
+                    </li>
+                    <li routerLinkActive="selected" class="header-nav-list-item">
+                        <a routerLink="/network">Network</a>
+                    </li>
+                    <li routerLinkActive="selected" class="header-nav-list-item">
+                        <a routerLink="/login/send-details">Resources</a>
+                    </li>
+                    <li routerLinkActive="selected" class="header-nav-list-item">
+                        <a routerLink="/login">Events</a>
+                   </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-item header-login">
+            <div class="header-search">
+                <span class="icon icon-search"></span>
+                <input class="search-input" type="text" autocomplete="off" role="combobox" aria-autocomplete="list" placeholder="Search...">
+            </div>
+            <a routerLink="/profile" class="profile-login">
+                <div class="header-login-text">
+                    Student
+                </div>
+                <div class="header-login-profile">
+                    <img src="http://fillmurray.com/35/35" alt="Login Profile" class="header-login-profile-pic" />
+                </div>
+            </a>
+        </div>
+        <div class="header-item header-hamburger nav-is-{{ menuState }}">
+            <button (click)="toggleMenu()" class="icon icon-menu">
+            </button>
+        </div>
+        <nav [@slideInOut]="menuState" class="header-nav-list-mobile">
+            <ul class="header-nav-list-mobile-inner">
+                <li routerLinkActive="selected" (click)="toggleMenu()" class="header-nav-list-item">
+                    <a routerLink="/">Home</a>
+                </li>
+                <li routerLinkActive="selected" (click)="toggleMenu()" class="header-nav-list-item">
+                    <a routerLink="/network">Network</a>
+                </li>
+                <li routerLinkActive="selected" (click)="toggleMenu()" class="header-nav-list-item">
+                    <a routerLink="/resources">Resources</a>
+                </li>
+                <li routerLinkActive="selected" (click)="toggleMenu()" class="header-nav-list-item">
+                    <a routerLink="/login">Events</a>
+                </li>
+                <li class="header-nav-list-item">
+                    <a routerLink="/profile" (click)="toggleMenu()">
+                        <div class="header-login-profile">
+                            <img src="http://fillmurray.com/35/35" alt="Login Profile" class="header-login-profile-pic" />
+                        </div>
+                        <div class="header-login-text">
+                            Student
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>

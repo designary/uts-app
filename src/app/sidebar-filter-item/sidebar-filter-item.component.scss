@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+// Variables & Mixins
+@import '~styles/partials/fonts';
+@import '~styles/partials/variables';
+@import '~styles/partials/mixins';
+@import '~styles/partials/images';
+@import '~styles/partials/forms';
+
+.sidebar-filter-item-menu {
+    background-color: $color-white;
+    display: block;
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    width: 100%;
+    @include mq(phabet) {
+        width: 80%;
+    }
+}
+.block-filter {
+    .icon-caret-left {
+        font-size: 16px;
+        margin-right: 3px;
+        margin-top: 7px;
+    }
+    &.open {
+        .row {
+            display: block;
+        }
+        .icon-caret-left {
+            font-size: 10px;
+            margin-right: 0;
+            margin-top: 13px;
+            &:before {
+                content: $icon-caret-up;
+            }
+        }
+    }
+    .row {
+        display: none;
+    }
+}
+:host-context(.cards-filter-dropdown) {
+    .sidebar-filter-item-menu {
+        box-shadow: 0 0 10px 5px rgba(50, 50, 50, 0.25);
+        display: none;
+        left: 0;
+        margin: 0;
+        padding: 60px 30px 30px;
+        position: fixed;
+        right: auto;
+        top: 0;
+        z-index: $zIndex-8;
+        @include mq(tablet) {
+            left: auto;
+            position: absolute;
+            right: -3px;
+            top: -3px;
+            width: 300px;
+        }
+    }
+}
+:host-context(.cards-filter-dropdown.open) {
+    .sidebar-filter-item-menu {
+        display: block;
+        li:last-child {
+            .block-margin {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

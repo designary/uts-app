@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+// Variables & Mixins
+@import '~styles/partials/fonts';
+@import '~styles/partials/variables';
+@import '~styles/partials/mixins';
+@import '~styles/partials/images';
+
+.welcome-modal-box {
+    background-color: $color-white;
+    box-shadow: 1px 1px 15px 1px rgba($color-gray-base, 0.3);
+    display: block;
+    left: 0;
+    padding: 0 30px;
+    position: fixed;
+    top: 0;
+    z-index: $zIndex-10 + 1;
+    @include mq(phablet) {
+        left: calc(50% - 200px);
+        padding-bottom: 20px;
+        top: 10%;
+        width: 350px;
+    }
+    .icon-remove {
+        appearance: none;
+        border: 0;
+        background-color: transparent;
+        color: $color-gray-light;
+        height: 20px;
+        position: absolute;
+        right: 10px;
+        padding: 5px;
+        top: 5px;
+        width: 20px;
+        z-index: $zIndex-9 + 2;
+        &:focus {
+            outline: none;
+        }
+    }
+    .button {
+        margin-top: -65px;
+        @include mq(phablet) {
+            margin-top: 0;
+        }
+    }
+}
+.welcome-modal-title {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.backdrop {
+    position: fixed;
+    z-index: $zIndex-9;
+}

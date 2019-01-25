@@ -1,0 +1,76 @@
+@charset "UTF-8";
+
+// Variables & Mixins
+@import '~styles/partials/fonts';
+@import '~styles/partials/variables';
+@import '~styles/partials/mixins';
+@import '~styles/partials/images';
+
+.app-profile-details {
+    @include mq(tablet) {
+        flex: 2;
+        order: 1;
+        padding-left: 2%;
+    }
+    @include mq(tablet-wide) {
+        flex: 4;
+        padding-left: 2%;
+    }
+}
+.app-profile-section {
+    @include mq(tablet) {
+        flex: 2;
+        order: 2;
+        padding-left: 2%;
+    }
+    @include mq(tablet-wide) {
+        flex: 4;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+.block-see-more {
+    padding-bottom: 40px;
+}
+.block-edit {
+    @include clearfix;
+    .glyphicon-pencil {
+        display: inline-block;
+        float: right;
+        margin-bottom: -22px;
+        @include mq(tablet) {
+            margin-right: -30px;
+        }
+    }
+}
+.profile-main-title {
+    border-bottom: 1px solid $color-gray;
+    font-weight: 300;
+    width: 100%;
+    .see-more {
+        font-family: $font-family-base;
+        float: right;
+        a {
+            color: $color-orange2;
+            display: inline-block;
+            font-size: 10px;
+            font-weight: normal;
+            margin-bottom: 5px;
+            vertical-align: bottom;
+        }
+    }
+}
+:host-context(.page-profile) {
+    .project-cards,
+    .recent-activity-cards {
+        @include mq(tablet) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+    .post-card-vertical {
+        @include mq(tablet) {
+            width: 32%;
+        }
+    }
+}

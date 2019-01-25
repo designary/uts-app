@@ -1,0 +1,477 @@
+@charset "UTF-8";
+
+// Variables & Mixins
+@import '~styles/partials/fonts';
+@import '~styles/partials/variables';
+@import '~styles/partials/mixins';
+@import '~styles/partials/images';
+@import '~styles/partials/forms';
+
+/* Header. */
+
+.header-login {
+    margin: 0 auto;
+    position: relative;
+    width: 80%;
+    z-index: $zIndex-9;
+    &:before {
+        background-color: $color-gray-lighter;
+        display: block;
+        content: '';
+        height: 5px;
+        left: 0;
+        position: absolute;
+        top: 65px;
+        width: 100%;
+        z-index: 0;
+    }
+    &:after {
+        background-color: $color-orange2;
+        content: '';
+        height: 5px;
+        left: 25%;
+        position: absolute;
+        top: 65px;
+        width: 50%;
+        z-index: $zIndex-1;
+    }
+    &.process-reg-routes {
+        &:before,
+        &:after {
+            content: none;
+        }
+    }
+    .header-inner {
+        border-collapse: collapse;
+        display: table;
+        position: relative;
+        table-layout: fixed;
+        width: 100%;
+    }
+    .header-item {
+        display: table-cell;
+        margin: 0;
+        padding: 0;
+        vertical-align: middle;
+        &.header-logo {
+            max-width: 200px;
+            width: 200px;
+        }
+    }
+    .header-item-logo {
+        background: url($logo-uts-ftdi) no-repeat bottom;
+        display: block;
+        height: 44px;
+        width: 164px;
+    }
+    .header-item-logo-text {
+        color: $color-orange1;
+        display: block;
+        font-size: 8px;
+        padding: 48px 5px 9px;
+        text-align: center;
+        white-space: nowrap;
+    }
+}
+
+/* General Styles. */
+.login-text {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 0;
+    & + .login-text {
+        margin-top: 5px;
+    }
+}
+.login-text-filled {
+    display: block;
+    font-size: 16px;
+    font-weight: $weight-semibold;
+    margin-bottom: 0;
+}
+.login-help-text {
+    display: block;
+    font-size: 12px;
+}
+.login-text-gray {
+    color: $color-gray;
+}
+.login-text-light {
+    color: $color-gray-light;
+}
+.login-text-italic {
+    font-style: italic;
+}
+.login-text-no-margin {
+    margin-bottom: 0;
+}
+.login-text-margin-bottom {
+    margin-bottom: 5px;
+}
+.login-mini-link {
+    color: $color-orange2;
+    font-size: 10px;
+}
+.icon-help {
+    color: $color-orange2;
+    display: block;
+    font-size: 24px;
+    position: relative;
+    &:hover {
+        cursor: pointer;
+    }
+    &:focus {
+        outline: none;
+    }
+}
+.progress-bar-container {
+    display: block;
+    height: 0;
+    margin: 50px auto 0;
+    position: relative;
+    @include mq(tablet) {
+        margin-top: 20px;
+    }
+    .progress-bar-marker {
+        display: none;
+        height: 20px;
+        left: 0;
+        position: absolute;
+        top: -20px;
+        width: 15px;
+        &:before {
+            color: $color-white;
+            font-size: 11px;
+            left: 2px;
+            position: absolute;
+            top: 3px;
+        }
+        &.progress-bar-marker-left {
+            fill: $color-orange1;
+            left: calc(33% - 7px);
+            .confirm-container &,
+            .add-details-container &,
+            .add-work-container & {
+                display: block;
+            }
+        }
+        &.progress-bar-marker-middle {
+            fill: $color-orange2;
+            left: calc(66% - 7px);
+            .add-details-container &,
+            .add-work-container & {
+                display: block;
+            }
+        }
+        &.progress-bar-marker-right {
+            fill: rgba($color-orange2, 0.7);
+            left: calc(100% - 7px);
+            .add-work-container & {
+                display: block;
+            }
+        }
+    }
+    .progress-bar-block {
+        background-color: $color-gray-lighter;
+        display: flex;
+        height: 15px;
+        margin: 0 auto;
+        position: relative;
+        width: 100%;
+        @include mq(tablet) {
+            width: 50%;
+        }
+        .progress-bar-left {
+            height: 100%;
+            width: 33%;
+            .create-container & {
+                background-color: $color-gray;
+            }
+            .confirm-container &,
+            .add-details-container &,
+            .add-work-container & {
+                background-color: $color-orange1;
+            }
+        }
+        .progress-bar-middle {
+            height: 100%;
+            width: 33%;
+            .confirm-container &,
+            .create-container & {
+                background-color: $color-gray-light;
+            }
+            .add-details-container &,
+            .add-work-container & {
+                background-color: $color-orange2;
+            }
+        }
+        .progress-bar-right {
+            height: 100%;
+            width: 34%;
+            .create-container &,
+            .confirm-container &,
+            .add-details-container &, {
+                background-color: $color-gray-lighter;
+            }
+            .add-work-container & {
+                background-color: rgba($color-orange2, 0.7);
+            }
+        }
+    }
+}
+/* Content. */
+.page-login {
+    display: block;
+    margin: 0 auto;
+    overflow-x: visible;
+    padding: 0;
+    width: 80%;
+    .login-content {
+        margin: 5% auto;
+        width: 100%;
+        @include mq(phablet) {
+            width: 70%;
+        }
+        @include mq(tablet) {
+            width: 50%;
+        }
+    }
+    .login-title {
+        display: inline-block;
+        font-size: 32px;
+        margin-bottom: 20px;
+        margin-top: 40px;
+    }
+    .login-image {
+        border-radius: 50%;
+        display: block;
+        height: auto;
+        margin: 0 auto 10px;
+        overflow: hidden;
+        vertical-align: top;
+        width: 50%;
+        @include mq(tablet) {
+            display: inline-block;
+            width: 29%;
+        }
+        @include mq(tablet-wide) {
+            width: 30%;
+        }
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+    .login-message {
+        font-size: 16px;
+        font-weight: $weight-semibold;
+        margin-bottom: 20px;
+    }
+    .login-user-details {
+        display: inline-block;
+        margin-left: 0;
+        margin-top: 10px;
+        width: 100%;
+        @include mq(tablet) {
+            margin-left: 9%;
+            width: 60%;
+        }
+    }
+    .button {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    .button-width-auto {
+        min-width: 120px;
+        width: auto;
+    }
+    .row {
+        .width-20 {
+            position: relative;
+        }
+    }
+
+    /* Welcome. */
+    .welcome {
+        text-align: center;
+        @include mq(tablet) {
+            text-align: left;
+        }
+    }
+    
+    /* Create */
+    .create {
+        input[type="checbox"] {
+            float: left;
+        }
+        .label-checkbox {
+            font-size: 12px;
+        }
+        .width-90 {
+            width: 100%;
+            @include mq(tablet) {
+                width: 90%;
+            }
+        }
+        .input-right {
+            float: none;
+            @include mq(tablet) {
+                float: none;
+            }
+        }
+    }
+
+    /* Confirm. */
+    .confirm {
+        text-align: center;
+        @include mq(tablet) {
+            text-align: left;
+        }
+        .row-time-period {
+            margin-bottom: 10%;
+            input {
+                border: 1px solid $color-gray-light;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+        .input-right {
+            float: none;
+            @include mq(tablet) {
+                float: right;
+            }
+        }
+        .width-40 {
+            width: 100%;
+            @include mq(tablet) {
+                width: 40%;
+            }
+        }
+    }
+    /* Add Details. */
+    .add-details {
+        text-align: center;
+        @include mq(tablet) {
+            text-align: left;
+        }
+        label {
+            text-align: left;
+        }
+        .input-right {
+            float: none;
+            @include mq(tablet) {
+                float: right;
+            }
+        }
+        .row {
+            .confirm-dropdown {
+                .icon-triangle-down {
+                    right: 12%;
+                }
+            }
+            .icon-help {
+                padding-top: 9px;
+            }
+        }
+    }
+    
+    /* Add Details. */
+    .add-work {
+        text-align: center;
+        @include mq(tablet) {
+            text-align: left;
+        }
+        label {
+            text-align: left;
+        }
+        .input-right {
+            float: none;
+            @include mq(tablet-wide) {
+                float: right;
+            }
+        }
+        .row {
+            .confirm-dropdown {
+                .icon-triangle-down {
+                    right: 12%;
+                }
+            }
+            .icon-help {
+                padding-top: 9px;
+            }
+        }
+        .row-inner {
+            &.row-duo {
+                .width-50 {
+                    width: 100%;
+                    &:first-child {
+                        margin-bottom: 10px;
+                    }
+                    @include mq(tablet-wide) {
+                        width: 48%;
+                        &:first-child {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+        .description {
+            margin-top: 10px;
+            @include mq(tablet-wide) {
+                margin-top: 0;
+            }
+        }
+        .work {
+            .row-inner:first-child {
+                margin-bottom: 10px;
+                @include mq(tablet-wide) {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    
+    /* Pending. */
+    .pending {
+        text-align: center;
+        @include mq(tablet) {
+            text-align: left;
+        }
+        .button {
+            width: 100%;
+            @include mq(tablet) {
+                margin-bottom: 0;
+            }
+        }
+    }
+    /* Register. */
+    .register {
+        text-align: center;
+        @include mq(tablet) {
+            text-align: left;
+        }
+        .buttons-row {
+            display: block;
+            @include mq(tablet) {
+                display: flex;
+            }
+        }
+        .button {
+            display: block;
+            margin: 0 0 10px;
+            width: 100%;
+            @include mq(tablet) {
+                margin: 0 10px;
+                width: auto;
+                &:first-child {
+                    margin-left: 0;
+                }
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+// Variables & Mixins
+@import '~styles/partials/fonts';
+@import '~styles/partials/variables';
+@import '~styles/partials/mixins';
+
+.post-card-poster {
+    display: inline-table;
+}
+.post-card-poster-image {
+    border: 1px solid $color-gray-base;
+    border-radius: 50%;
+    display: inline-block;
+    height: 35px;
+    margin-right: 3px;
+    overflow: hidden;
+    vertical-align: middle;
+    width: 35px;
+}
+:host-context(.post-card-data),{
+    .post-card-poster-image {
+        @include mq(tablet) {
+            display: none;
+        }
+        @include mq(desktop) {
+            display: inline-block;
+        }
+    }
+}
+:host-context(.post-card-horizontal) {
+    .post-card-poster-image {
+        display: none;
+        @include mq(tablet) {
+            display: inline-block;
+        }
+    }
+}
+.post-card-poster-info {
+    display: inline-block;
+    vertical-align: middle;
+    .post-card-poster-name {
+        font-size: 10px;
+        font-weight: 700;
+        margin-top: 0;
+    }
+    .post-card-poster-date {
+        font-size: 8px;
+    }
+}

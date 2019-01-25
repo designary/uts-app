@@ -1,0 +1,45 @@
+<div [@dialog] *ngIf="visible" class="create-broadcast-modal">
+    <button *ngIf="closable" (click)="close()" aria-label="Close" class="dialog__close-btn icon icon-remove"></button>
+    <h3 class="create-broadcast-title">
+        Set A System Broadcast
+    </h3>
+    <form>
+        <div class="row row-block">
+            <input class="width-100" value="" aria-label="Name" maxlength="40" autocomplete="off" aria-autocomplete="true" placeholder="Name" />
+        </div>
+        <div class="row row-block">
+            <textarea class="width-100" value="" aria-label="" rows="3" cols="40" max-length="200" autocomplete="off" aria-autocomplete="true" placeholder="Information (200 character limit)"></textarea>
+        </div>
+        <div class="row">
+            <div class="row row-block row-checkbox width-100">
+                <label>Send to:</label>
+                <input type="checkbox" name="current" value="Current"> <span class="label-checkbox">Current</span>
+                <input type="checkbox" name="Alumni" value="Alumni"> <span class="label-checkbox">Alumni</span>
+                <hr>
+            </div>
+            <div class="row row-block row-checkbox width-100">
+                <input type="checkbox" name="BCII" value="BCII"> <span class="label-checkbox">BCII</span>
+                <input type="checkbox" name="BTI" value="BTI"> <span class="label-checkbox">BTI</span>
+                <input type="checkbox" name="DIP" value="DIP"> <span class="label-checkbox">DIP</span>
+            </div>
+            <div class="row row-block row-checkbox width-100">
+                <input type="checkbox" name="Animal Logic" value="Animal Logic"> <span class="label-checkbox">Animal Logic</span>
+                <input type="checkbox" name="Masters" value="Masters"> <span class="label-checkbox">Masters</span>
+                <input type="checkbox" name="Staff" value="Staff"> <span class="label-checkbox">Staff</span>
+            </div>
+        </div>
+        <div class="row width-100">
+            <label>Expiry</label>
+            <div class="row-time-period width-50">
+                <div class="row-inner row-margin-2">
+                    <span class="icon icon-calendar"></span>
+                    <input class="edit-profile-input width-40" value="" aria-label="Description" autocomplete="off" aria-autocomplete="true" placeholder="Start Date" type="date" />
+                </div>
+            </div>
+        </div>
+        <div class="row row-block width-100">
+            <button class="button button-blue width-45 input-right" type="button">Save</button>
+        </div>
+    </form>
+</div>
+<div *ngIf="visible" class="overlay" (click)="close()"></div>

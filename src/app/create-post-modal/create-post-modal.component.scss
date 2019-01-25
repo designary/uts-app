@@ -1,0 +1,90 @@
+@charset "UTF-8";
+
+// Variables & Mixins
+@import '~styles/partials/fonts';
+@import '~styles/partials/variables';
+@import '~styles/partials/mixins';
+@import '~styles/partials/images';
+@import '~styles/partials/forms';
+
+/* Create Post Modal */
+.create-post-modal {
+    background-color: $color-white;
+    box-shadow: 1px 1px 15px 1px rgba($color-gray-base, 0.3);
+    display: block;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: $zIndex-10 + 1;
+    @include mq(phablet) {
+        height: 194px;
+        left: calc(50% - 250px);
+        top: calc(50% - 97px);
+        width: 500px;
+    }
+    @include mq(tablet) {
+        left: calc(50% - 300px);
+        width: 600px;
+    }
+    .row {
+        position: relative;
+    }
+    .tags {
+        color: $color-gray;
+        font-size: 12px;
+        padding: 12px 20px;
+    }
+    .input-location {
+        border-left: 0;
+        border-right: 0;
+        height: 50px;
+        position: relative;
+        text-indent: 20px;
+        z-index: $zIndex-1;
+    }
+    .input-location-label {
+        background-color: $color-gray-base;
+        color: $color-white;
+        display: inline-block;
+        font-size: 14px;
+        height: 50px;
+        line-height: 2.2;
+        padding: 10px;
+        position: absolute;
+        top: 0;
+        vertical-align: middle;
+        z-index: $zIndex-2;
+    }
+    .icon-remove {
+        color: $color-gray-light;
+        position: absolute;
+        right: 10px;
+        top: 17px;
+        z-index: $zIndex-2;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    .comment-box {
+        border: 0;
+        font-size: 18px;
+        margin-bottom: 0;
+        &:focus {
+            outline: none;
+        }
+    }
+    .button-share {
+        box-shadow: none;
+        float: right;
+        padding-left: 30px;
+        padding-right: 30px;
+        &:focus {
+            outline: none;
+        }
+    }
+}
+.backdrop {
+    position: fixed;
+    z-index: $zIndex-9;
+}

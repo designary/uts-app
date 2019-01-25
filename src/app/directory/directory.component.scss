@@ -1,0 +1,129 @@
+@charset "UTF-8";
+
+// Variables & Mixins
+@import '~styles/partials/fonts';
+@import '~styles/partials/variables';
+@import '~styles/partials/mixins';
+@import '~styles/partials/images';
+
+.page-directory {
+    display: block;
+    width: 100%;
+    .user-cards {
+        .user-cards-row {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+            @include mq(phablet) {
+                flex-direction: row;
+                margin-bottom: 30px;
+            }
+            > * {
+                margin-bottom: 15px;
+                width: 100%;
+                @include mq(phablet) {
+                    margin-bottom: 0;
+                    width: 47%;
+                }
+            }
+        }
+    }
+}
+.page-directory-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    width: 100%;
+    @include mq(phablet) {
+        flex-direction: row;
+    }
+    .col-side {
+        flex: 2;
+        order: 1;
+        @include mq(phablet) {
+            margin-left: 5%;
+        }
+    }
+    .col-main {
+        flex: 4;
+        order: 2;
+        @include mq(phablet) {
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+    }
+}
+.block-welcome {
+    border-bottom: 1px solid $color-gray-darker;
+    display: flex;
+    flex-direction: column;
+    font-family: $font-family-heading;
+    padding-bottom: 10px;
+    @include mq(phablet) {
+        flex-direction: row;
+        margin: 0 5%;
+    }
+    .col-side {
+        flex: 2;
+        order: 1;
+    }
+    .col-main {
+        flex: 4;
+        order: 2;
+    }
+    .page-title {
+        display: block;
+        font-size: 34px;
+        font-weight: bold;
+        margin-top: 0;
+        @include mq(phablet) {
+            float: left;
+        }
+    }
+    .welcome-search {
+        display: block;
+        @include mq(phablet) {
+            float: left;
+            margin-top: 15px;
+            padding-left: 40px;
+        }
+        input[type=text] {
+            border: 0;
+            font-family: $font-family-base;
+            font-style: italic;
+            margin-left: 10px;
+        }
+        .icon {
+            font-size: 18px;
+        }
+    }
+    .link-take-me {
+        color: $color-gray-base;
+        display: block;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 2.6;
+        margin-top: 10px;
+        @include mq(phablet) {
+            float: right;
+            margin-top: 0;
+        }
+        &:hover {
+            cursor: pointer;
+            text-decoration: none;
+        }
+        span {
+            background-image: url($icon-somewhere);
+            background-repeat: no-repeat;
+            background-size: contain;
+            display: inline-block;
+            height: 42px;
+            margin-top: -13px;
+            left: -8px;
+            position: relative;
+            top: 16px;
+            width: 42px;
+        }
+    }
+}

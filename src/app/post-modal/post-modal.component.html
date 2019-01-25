@@ -1,0 +1,35 @@
+<div [@dialog] *ngIf="visible" class="backdrop-clear">
+    <div class="post-modal-box">
+        <button *ngIf="closable" (click)="close()" aria-label="Close" class="dialog__close-btn icon icon-remove"></button>
+        <div class="post-card-vertical">
+            <app-post-card></app-post-card>
+        </div>
+        <ul class="post-modal-comments">
+            <li class="post-modal-comment">
+                <h4 class="post-modal-poster-name">
+                    Jill Scott
+                </h4>
+                <p class="post-modal-poster-comment">By popular demand you can now do this to slow down the dvr render.</p>
+                <div class="post-modal-poster-date">8 Sep 2017<a href="#" class="reply">Reply</a></div>
+            </li>
+            <li class="post-modal-comment">
+                <h4 class="post-modal-poster-name">
+                    Jill Scott
+                </h4>
+                <p class="post-modal-poster-comment">By popular demand you can now do this to slow down the dvr render.</p>
+                <div class="post-modal-poster-date">8 Sep 2017<a href="#" class="reply">Reply</a></div>
+            </li>
+            <li class="post-modal-comment">
+                <h4 class="post-modal-poster-name">
+                    Jill Scott
+                </h4>
+                <p class="post-modal-poster-comment">By popular demand you can now do this to slow down the dvr render.</p>
+                <div class="post-modal-poster-date">8 Sep 2017<a href="#" class="reply">Reply</a></div>
+            </li>
+        </ul>
+        <div class="post-modal-write-comment">
+            <input class="post-modal-input" type="text" placeholder="Write a comment...">
+        </div>
+    </div>
+</div>
+<div *ngIf="visible" class="overlay" (click)="close()"></div>

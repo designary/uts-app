@@ -1,0 +1,132 @@
+$bootstrap-sass-asset-helper: false !default;
+//
+// Variables
+// --------------------------------------------------
+
+
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+
+$color-white: #fff !default;
+
+$color-gray-base: #000 !default;
+$color-gray-darker: #333;
+$color-gray-dark: lighten($color-gray-base, 20%) !default;   // #333
+$color-gray: #727170;
+$color-gray-light: #AFAFAF;
+$color-gray-lighter: #DDDDDD;
+
+$color-orange1: #E36712 !default;
+$color-orange2: #F3801B !default;
+
+$color-blue1: #00B2BC !default;
+$color-blue2: #4FDFEA !default;
+$color-blue3: #32CBD3 !default;
+
+$color-purple1: #BE49C7 !default;
+
+$color-green1: #53CA36 !default;
+
+$brand-success: green !default;
+$brand-info: #5bc0de !default;
+$brand-warning: #f0ad4e !default;
+$brand-danger: #d9534f !default;
+
+$zIndex-1: 100;
+$zIndex-2: 200;
+$zIndex-3: 300;
+$zIndex-4: 400;
+$zIndex-5: 500;
+$zIndex-6: 600;
+$zIndex-7: 700;
+$zIndex-8: 800;
+$zIndex-9: 900;
+$zIndex-10: 1000;
+
+$weight-light: 300;
+$weight-regular: 400;
+$weight-semibold: 600;
+$weight-bold: 700;
+$weight-xbold: 800;
+
+//== Iconography
+//
+//## Specify custom location and filename of the included Glyphicons icon font. Useful for those including Bootstrap via Bower.
+
+//** Load fonts from this directory.
+
+// [converter] If $bootstrap-sass-asset-helper if used, provide path relative to the assets load path.
+// [converter] This is because some asset helpers, such as Sprockets, do not work with file-relative paths.
+$icon-font-path: if($bootstrap-sass-asset-helper, "bootstrap/", "../fonts/bootstrap/") !default;
+
+$icomoon-font-path: "fonts" !default;
+
+$icon-help: "\e925";
+$icon-edit-circle-chunky: "\e924";
+$icon-triangle-down: "\e922";
+$icon-caret-left: "\e923";
+$icon-paperclip: "\e90a";
+$icon-award: "\e913";
+$icon-description: "\e914";
+$icon-collaborators: "\e915";
+$icon-edit: "\e916";
+$icon-location: "\e917";
+$icon-more: "\e918";
+$icon-tags: "\e919";
+$icon-insert-picture: "\e91a";
+$icon-quote: "\e91b";
+$icon-smallcaps: "\e91c";
+$icon-allcaps: "\e91d";
+$icon-link: "\e91e";
+$icon-italics: "\e920";
+$icon-bold: "\e921";
+$icon-remove: "\e903";
+$icon-pencil-circle: "\e904";
+$icon-journey-arrow: "\e900";
+$icon-bio: "\e901";
+$icon-details: "\e905";
+$icon-close-circle-chunky: "\e906";
+$icon-file-circle: "\e907";
+$icon-work: "\e908";
+$icon-close-circle: "\e909";
+$icon-remove-circle-inverse: "\e90b";
+$icon-plus-circle-inverse: "\e90c";
+$icon-tribes: "\e90d";
+$icon-calendar: "\e90e";
+$icon-cohorts: "\e910";
+$icon-world: "\e911";
+$icon-startup: "\e912";
+$icon-company: "\e91f";
+$icon-person: "\e929";
+$icon-contact: "\e92a";
+$icon-eye: "\e92b";
+$icon-plus-circle: "\e92c";
+$icon-search: "\e92d";
+$icon-caret-up: "\e92e";
+$icon-caret-down: "\e92f";
+$icon-share: "\e930";
+$icon-comment: "\e931";
+$icon-thumbs-up: "\e932";
+$icon-somewhere: "\e933";
+$icon-warning: "\e934";
+$icon-graduation: "\e935";
+$icon-institution: "\e936";
+$icon-suitcase: "\e937";
+$icon-stardom: "\e938";
+$icon-aeroplane: "\e939";
+$icon-logo-uts-ftdi: "\e93a";
+$icon-home: "\e902";
+$icon-camera: "\e90f";
+$icon-telephone: "\e942";
+$icon-briefcase: "\e9ae";
+$icon-menu: "\e9bd";
+$icon-heart: "\e9da";
+$icon-tick: "\ea10";
+$icon-checkbox-checked: "\ea52";
+$icon-checkbox-unchecked: "\ea53";
+
+//** File name for all font files.
+$icon-font-name:          "glyphicons-halflings-regular" !default;
+//** Element ID within SVG icon file.
+$icon-font-svg-id:        "glyphicons_halflingsregular" !default;

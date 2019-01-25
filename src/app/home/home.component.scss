@@ -1,0 +1,410 @@
+@charset "UTF-8";
+
+// Variables & Mixins
+@import '~styles/partials/fonts';
+@import '~styles/partials/variables';
+@import '~styles/partials/mixins';
+@import '~styles/partials/images';
+
+.page-home {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    @include mq(phablet) {
+        flex-direction: row;
+    }
+}
+.col-create {
+    flex: 1;
+    order: 1;
+    position: relative;
+}
+.col-main {
+    flex: 8;
+    order: 2;
+}
+.block-welcome {
+    border-bottom: 1px solid $color-gray-darker;
+    display: block;
+    font-family: $font-family-heading;
+    margin-bottom: 20px;
+    margin-right: 2%;
+    padding-bottom: 10px;
+    .greeting {
+        display: block;
+        font-size: 32px;
+        font-weight: bold;
+        margin-top: 0;
+        @include mq(phablet) {
+            float: left;
+        }
+    }
+    .cards-filter-dropdown {
+        display: inline-block;
+        position: relative;
+        z-index: $zIndex-9;
+        @include mq(tablet) {
+            z-index: $zIndex-1;
+        }
+        &.open {
+            .icon-caret-down {
+                &:before {
+                    content: $icon-caret-up;
+                }
+            }
+            .cards-filter {
+                left: 30px;
+                position: fixed;
+                top: 20px;
+                @include mq(phablet) {
+                    left: 10px;
+                }
+                @include mq(tablet) {
+                    left: auto;
+                    position: relative;
+                    top: auto;
+                }
+            }
+        }
+    }
+    .cards-filter {
+        appearance: none;
+        background-color: transparent;
+        box-shadow: none;
+        border: 0;
+        color: $color-orange1;
+        display: inline-block;
+        font-family: $font-family-base;
+        font-size: 14px;
+        padding: 15px 8px 0 0;
+        position: relative;
+        text-transform: uppercase;
+        z-index: $zIndex-9;
+        @include mq(phablet) {
+            padding: 15px 20px 0 20px;
+        }
+        &:focus {
+            outline: none;
+        }
+        span {
+            padding: 4px 4px 0;
+        }
+        .icon {
+            font-size: 11px;
+        }
+    }
+    .link-take-me {
+        color: $color-gray-base;
+        display: block;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 2.6;
+        @include mq(phablet) {
+            float: right;
+        }
+        &:hover {
+            cursor: pointer;
+            text-decoration: none;
+        }
+        span {
+            background-image: url($icon-somewhere);
+            background-repeat: no-repeat;
+            background-size: contain;
+            display: inline-block;
+            height: 42px;
+            margin-top: -13px;
+            left: -8px;
+            position: relative;
+            top: 16px;
+            width: 42px;
+        }
+    }
+}
+.home-wrapper {
+    clear: both;
+    display: flex;
+    flex-direction: column;
+    @include mq(phablet) {
+        flex-direction: row;
+    }
+}
+.home-primary {
+    flex: 6;
+}
+.home-secondary {
+    flex: 2;
+    @include mq(phablet) {
+        padding-left: 5%;
+        padding-right: 2%;
+    }
+}
+.post-cards {
+    display: flex;
+    flex-flow: column nowrap;
+    list-style: none;
+    justify-content: space-between;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-left: 0;
+    width: 100%;
+    @include mq(tablet) {
+        flex-flow: row wrap;
+        margin-bottom: 15px;
+    }
+    li {
+        width: 100%;
+        @include mq(tablet) {
+            width: 32%;
+        }
+        &.post-card-horizontal-wrapper {
+            width: 100%;
+            @include mq(tablet) {
+                width: 66%;
+            }
+            .post-card-horizontal {
+                margin-bottom: 15px;
+                @include mq(tablet-wide) {
+                    margin-bottom: 10px;
+                }
+                @include mq(desktop) {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+        &.post-card-horizontal-wide {
+            width: 100%;
+        }
+    }
+}
+.status-posts {
+    margin: 0 0 15px;
+    padding: 0;
+}
+.post-card-vertical-half {
+    flex-direction: column;
+}
+.post-card-horizontal-half-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include mq(tablet) {
+        flex-direction: row;
+    }
+}
+.post-card-horizontal-half {
+    margin-bottom: 15px;
+    width: 100%;
+    @include mq(tablet) {
+        margin-bottom: 0;
+        width: 48.5%;
+    }
+}
+
+/* Home Secondary Area */
+.block-news-flash {
+    background-color: rgba($color-blue1, 0.5);
+    background-image: url($icon-warning);
+    background-repeat: no-repeat;
+    background-position: -80px center;
+    padding: 25px;
+    position: relative;
+    width: 100%;
+    &:hover {
+        cursor: pointer;
+    }
+    .block-news-flash-title {
+        font-family: $font-family-heading;
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 0;
+    }
+    .block-news-flash-text {
+        font-size: 10px;
+    }
+    .icon {
+        color: $color-gray-light;
+        font-size: 10px;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+}
+.block-events {
+    &.open {
+        .block-events-list {
+            display: block;
+        }
+        .icon-caret-down {
+            &:before {
+                content: $icon-caret-up;
+            }
+        }
+    }
+    .block-events-list {
+        display: none;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .block-event-date {
+        border: 2px solid $color-blue1;
+        float: left;
+        font-family: $font-family-heading;
+        margin-right: 10px;
+        padding: 5px 10px;
+        text-align: center;
+        width: 60px;
+        .day {
+            display: block;
+            font-size: 32px;
+            font-weight: bold;
+            line-height: 1;
+        }
+        .month {
+            display: block;
+            font-size: 14px;
+        }
+    }
+    .block-events-info {
+        display: block;
+        margin-left: 70px;
+    }
+    .block-events-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 0;
+    }
+    .block-events-subtitle {
+        font-family: $font-family-base;
+        font-size: 14px;
+        margin-bottom: 15px;
+        margin-top: 2px;
+    }
+    .block-events-status {
+        font-family: $font-family-base;
+        font-size: 10px;
+        .status {
+            color: $color-orange1;
+            &.going {
+                color: $color-blue1;
+            }
+        }
+    }
+}
+.block-opportunities {
+    &.open {
+        .block-opp-list {
+            display: block;
+        }
+        .icon-caret-down {
+            &:before {
+                content: $icon-caret-up;
+            }
+        }
+    }
+    .block-opp-list {
+        display: none;
+    }
+    .block-opp-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 0;
+        margin-top: 15px;
+    }
+    .block-opp-subtitle {
+        font-family: $font-family-base;
+        font-size: 10px;
+        font-weight: normal;
+        margin-top: 2px;
+    }
+    .block-opp-poster-image {
+        background-repeat: no-repeat;
+        border-radius: 50%;
+        border: 1px solid $color-gray-base;
+        display: inline-block;
+        height: 30px;
+        vertical-align: middle;
+        width: 30px;
+    }
+    .block-opp-poster-info {
+        display: inline-block;
+        padding-left: 5px;
+        vertical-align: middle;
+        .block-opp-poster-name {
+            font-size: 10px;
+            font-weight: 700;
+            margin-top: 0;
+        }
+        .block-opp-poster-date {
+            font-size: 9px;
+        }
+    }
+}
+.block-projects {
+    &.open {
+        .block-projects-list {
+            display: block;
+        }
+        .icon-caret-down {
+            &:before {
+                content: $icon-caret-up;
+            }
+        }
+    }
+    .block-projects-list {
+        display: none;
+        list-style: none;
+        margin: 15px 0;
+        padding: 0;
+    }
+    .block-projects-list-item {
+        display: flex;
+        margin-bottom: 15px;
+    }
+    .block-projects-image {
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: inline-block;
+        height: 80px;
+        vertical-align: middle;
+        width: 80px;
+        @include mq(tablet) {
+            height: 50px;
+            width: 50px
+        }
+        @include mq(desktop) {
+            height: 80px;
+            width: 80px
+        }
+    }
+    .block-projects-info {
+        display: inline-block;
+        padding-left: 5px;
+        vertical-align: middle;
+        .block-projects-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 3px;
+            margin-top: 0;
+        }
+        .block-projects-date {
+            font-family: $font-family-base;
+            font-size: 12px;
+            margin-bottom: 15px;
+            margin-top: 0;
+            text-transform: uppercase;
+            @include mq(tablet) {
+                margin-bottom: 5px;
+            }
+            @include mq(desktop) {
+                margin-bottom: 15px;
+            }
+        }
+        .block-projects-people {
+            font-family: $font-family-base;
+            font-size: 9px;
+            font-weight: 700;
+            margin-bottom: 0;
+        }
+    }
+}

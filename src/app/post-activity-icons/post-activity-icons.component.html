@@ -1,0 +1,8 @@
+<div class="post-card-activity">
+    <div (click)="toggleState()" class="icon icon-thumbs-up {{ stateFlag ? 'active' : '' }}"><span class="numbers-like">5</span></div>
+    <div (click)="showDialog = !showDialog" class="icon icon-comment"><span class="numbers-comment">10</span></div>
+</div>
+<app-post-modal [(visible)]="showDialog">
+    <button (click)="showDialog = !showDialog">Close</button>
+</app-post-modal>
+

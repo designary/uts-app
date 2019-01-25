@@ -1,0 +1,176 @@
+<app-feature-hero></app-feature-hero>
+<div class="container page-home">
+    <div class="col-create">
+        <app-create-button></app-create-button>
+    </div>
+    <div class="col-main">
+        <div class="block-welcome">
+            <h2 class="greeting">Welcome back, Sam</h2>
+            <div class="cards-filter-dropdown" dropdown>
+                <button class="cards-filter" dropdown-open>Filter<span class="icon icon-caret-down"></span>
+                </button>
+                <app-sidebar-filter-item dropdown-not-closable-zone></app-sidebar-filter-item>
+            </div>
+            <a class="link-take-me"><span class=""></span>Take Me Somewhere</a></div>
+        <div class="home-wrapper">
+            <div class="home-primary">
+                <ul class="post-cards">
+                    <li class="post-card-vertical">
+                        <app-post-card></app-post-card>
+                    </li>
+                    <li class="post-card-vertical">
+                        <app-post-card></app-post-card>
+                    </li>
+                    <li class="post-card-vertical-half">
+                        <app-post-card></app-post-card>
+                        <app-post-card></app-post-card>
+                    </li>
+                </ul>
+                <ul class="status-posts">
+                    <app-status-post></app-status-post>
+                    <app-status-post></app-status-post>
+                    <app-status-post></app-status-post>
+                </ul>
+                <ul class="post-cards">
+                    <li class="post-card-vertical">
+                        <app-post-card></app-post-card>
+                    </li>
+                    <li class="post-card-horizontal-wrapper">
+                        <div class="post-card-horizontal">
+                            <app-post-card></app-post-card>
+                        </div>
+                        <div class="post-card-horizontal-half-wrapper">
+                            <div class="post-card-horizontal-half">
+                            <app-post-card></app-post-card>
+                            </div>
+                            <div class="post-card-horizontal-half">
+                                <app-post-card></app-post-card>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="post-cards">
+                    <li class="post-card-horizontal-wide">
+                        <app-post-card></app-post-card>
+                    </li>
+                </ul>
+                <ul class="status-posts">
+                    <app-status-post></app-status-post>
+                    <app-status-post></app-status-post>
+                </ul>
+            </div>
+            <div class="home-secondary">
+                <div (click)="showDialog = !showDialog" class="block-margin block-news-flash">
+                    <div class="icon icon-remove"></div>
+                    <h2 class="block-news-flash-title">Attention BCII Graduates!</h2>
+                    <p class="block-news-flash-text">An industry event has been announced with some high profile employers attending (e.g. Elon Musk). Make sure you register your attendance and come along to potentially find a new career!</p>
+                </div>
+                <div class="block-margin block-events open" dropdown>
+                    <div class="block-title" dropdown-open>
+                        Events
+                        <span class="icon icon-caret-down"></span>
+                    </div>
+                    <ul class="block-events-list">
+                        <li class="block-events-list-item">
+                            <div class="block-event-date">
+                                <span class="day">22</span>
+                                <span class="month">Sep</span>
+                            </div>
+                            <div class="block-events-info">
+                                <h3 class="block-events-title">10 Year Reunion</h3>
+                                <h4 class="block-events-subtitle">Graduating Class of 2017</h4>
+                                <h5 class="block-events-status">You are: <span class="status going">Attending</span></h5>
+                            </div>
+                        </li>
+                        <li class="block-events-list-item">
+                            <div class="block-event-date">
+                                <span class="day">1</span>
+                                <span class="month">Oct</span>
+                            </div>
+                            <div class="block-events-info">
+                                <h3 class="block-events-title">TedX in Sydney</h3>
+                                <h4 class="block-events-subtitle">Tickets Available</h4>
+                                <h5 class="block-events-status">You are: <span class="status">Not Attending</span></h5>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="block-margin block-opportunities open" dropdown>
+                    <div class="block-title" dropdown-open>
+                        Opportunities
+                        <span class="icon icon-caret-down"></span>
+                    </div>
+                    <div class="block-opp-list">
+                        <h3 class="block-opp-title">
+                            Internship
+                        </h3>
+                        <h5 class="block-opp-subtitle">MARS</h5>
+                        <div class="block-opp-poster">
+                            <div class="block-opp-poster-image" style="background-image: url('http://www.fillmurray.com/30/30')">
+                            </div>
+                            <div class="block-opp-poster-info">
+                                <div class="block-opp-poster-name">Nick Hazell</div>
+                                <div class="block-opp-poster-date">Posted 9 Sept 2017</div>
+                            </div>
+                        </div>
+                        <h3 class="block-opp-title">
+                            Mentorship
+                        </h3>
+                        <h5 class="block-opp-subtitle">BCII Student</h5>
+                        <div class="block-opp-poster">
+                            <div class="block-opp-poster-image" style="background-image: url('http://www.fillmurray.com/30/30')">
+                            </div>
+                            <div class="block-opp-poster-info">
+                                <div class="block-opp-poster-name">Hariett Smith</div>
+                                <div class="block-opp-poster-date">Posted 11 Sept 2017</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="block-margin block-projects open" dropdown>
+                    <div class="block-title" dropdown-open>
+                        Projects
+                        <span class="icon icon-caret-down"></span>
+                    </div>
+                    <ul class="block-projects-list">
+                        <li class="block-projects-list-item">
+                            <div class="block-projects-image" style="background-image: url('http://www.fillmurray.com/90/90')">
+                            </div>
+                            <div class="block-projects-info">
+                                <h3 class="block-projects-title">
+                                    Zestlin
+                                </h3>
+                                <h5 class="block-projects-date">
+                                    March 2017 - Current
+                                </h5>
+                                <p class="block-projects-people">
+                                    You, Varun Mathew + 4 others
+                                </p>
+                            </div>
+                        </li>
+                        <li class="block-projects-list-item">
+                            <div class="block-projects-image" style="background-image: url('http://www.fillmurray.com/89/89')">
+                            </div>
+                            <div class="block-projects-info">
+                                <h3 class="block-projects-title">
+                                    Graze
+                                </h3>
+                                <h5 class="block-projects-date">
+                                    April 2017 - Current
+                                </h5>
+                                <p class="block-projects-people">
+                                    Lily Patridge
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-create-broadcast [(visible)]="showDialog">
+</app-create-broadcast>
+<app-welcome-modal [(visible)]="!showDialog">
+    <button (click)="showDialog = !showDialog">Close</button>
+</app-welcome-modal>

@@ -1,0 +1,220 @@
+@charset "UTF-8";
+
+// Variables & Mixins
+@import '~styles/partials/fonts';
+@import '~styles/partials/variables';
+@import '~styles/partials/mixins';
+@import '~styles/partials/images';
+@import '~styles/partials/forms';
+
+/* Edit Profile Page. */
+
+.page-edit-profile {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    @include mq(tablet) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    label {
+        color: $color-gray-dark;
+        font-family: $font-family-base;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        width: 100%;
+    }
+    .row {
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        &.row-time-period {
+            .row-inner {
+                border: 1px solid $color-gray-light;
+                padding: 5px;
+                > * {
+                    display: inline-block;
+                }
+            }
+        }
+        input[type="date"] {
+            border: 0;
+            width: 40%;
+        }
+        .project-cards {
+            display: flex;
+            flex-direction: column;
+            @include mq(tablet) {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            .post-card-vertical,
+            .post-card-vertical-add,
+            .post-card-vertical-empty {
+                margin-bottom: 15px;
+                width: 100%;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                &:focus {
+                    outline: none;
+                }
+                @include mq(tablet) {
+                    margin-bottom: 0;
+                    width: 32%;
+                }
+            }
+        }
+    }
+}
+.edit-profile-pic-section {
+    flex: 1;
+    order: 2;
+    @include mq(tablet) {
+        flex: 1;
+        order: 1;
+    }
+    .edit-profile-pic {
+        border-radius: 50%;
+        box-shadow: 3px 3px 5px 0 rgba($color-gray-base, 0.65);
+        display: block;
+        height: 140px;
+        overflow: hidden;
+        margin: 0 auto;
+        position: relative;
+        width: 140px;
+        @include mq(tablet) {
+            float: left;
+            margin-right: 20px;
+        }
+        .edit-profile-image {
+            height: 100%;
+            width: 100%;
+        }
+        .edit-profile-pic-overlay {
+            background-color: rgba($color-gray-base, 0.25);
+            display: block;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            &:before {
+                color: $color-white;
+                font-size: 48px;
+                position: absolute;
+                text-align: center;
+                top: calc(50% - 24px);
+                vertical-align: middle;
+                width: 100%;
+            }
+        }
+    }
+}
+.edit-profile-main {
+    flex: 1;
+    order: 3;
+    h1 {
+        text-align: center;
+    }
+    @include mq(tablet) {
+        flex: 6;
+        order: 2;
+        h1 {
+            text-align: left;
+        }
+        .edit-profile-main-inner {
+            padding-left: 5%;
+            padding-right: 10%;
+        }
+    }
+}
+.edit-profile-secondary {
+    flex: 1;
+    order: 1;
+    @include mq(tablet) {
+        flex: 4;
+        order: 3;
+        .edit-profile-secondary-inner {
+            padding-left: 2%;
+            padding-right: 15%;
+        }
+    }
+}
+.row .list-tribes {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    @include mq(phablet) {
+        flex-direction: row;
+    }
+}
+.list-tribe-item {
+    flex: 2;
+    margin-bottom: 10px;
+    text-align: center;
+    @include mq(phablet) {
+        margin-bottom: 0;
+    }
+    &.list-tribe-add {
+        flex: 1;
+        .tribe-badge {
+            @include mq(phablet) {
+                float: right;
+                margin-right: 0;
+            }
+        }
+        .icon-plus-circle-inverse {
+            color: $color-gray-lighter;
+        }
+    }
+    .tribe-badge {
+        float: left;
+        @include mq(tablet) {
+            float: none;
+        }
+    }
+    .list-tribe-label {
+        float: left;
+        padding-left: 10px;
+        @include mq(tablet) {
+            float: none;
+            font-size: 10px;
+            padding-left: 0;
+        }
+        @include mq(tablet-wide) {
+            font-size: 14px;
+        }
+        &.link-add {
+            @include mq(tablet) {
+                clear: both;
+                margin-top: 10px;
+            }
+        }
+    }
+    .icon-plus-circle-inverse,
+    .icon-remove-circle-inverse {
+        color: $color-gray-lighter;
+        font-size: 20px;
+        left: 5px;
+        padding: 4px;
+        position: absolute;
+        top: 7px;
+        z-index: $zIndex-2;
+    }
+}
+.list-tribe-label {
+    display: inline-block;
+    padding-top: 10px;
+    @include mq(tablet) {
+        display: block;
+    }
+}
+.edit-profile-email-box {
+    border: 1px solid $color-gray-light;
+    margin-bottom: 20px;
+    padding: 30px;
+    @include mq(phablet) {
+        margin-bottom: 100px;
+    }
+}

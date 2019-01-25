@@ -1,0 +1,252 @@
+.row {
+    margin: 0;
+    &.row-block {
+        margin-bottom: 20px;
+    }
+    > * {
+        display: inline-block;
+    }
+    label {
+        display: block;
+        font-weight: 400;
+        .icon {
+            padding-right: 10px;
+            &:before {
+                font-size: 16px;
+            }
+        }
+    }
+    .asterisk {
+        color: $color-orange2;
+        padding-left: 2px;
+    }
+    .row-inner {
+        position: relative;
+        width: 100%;
+        .icon-close-circle {
+            color: $color-gray-light;
+            font-size: 20px;
+            position: absolute;
+            right: 8px;
+            top: 12px;
+            width: 23px;
+            z-index: $zIndex-2;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        &.row-margin {
+            margin-bottom: 10px;
+        }
+        &.row-margin-2 {
+            margin-bottom: 20px;
+        }
+        &.row-duo {
+            label {
+                margin-bottom: 0;
+            }
+            .width-50 {
+                width: 48%;
+            }
+        }
+    }
+    select,
+    textarea {
+        appearance: none;
+        background-color: $color-white;
+        border-color: $color-gray-light;
+        border-radius: 0;
+        display: block;
+        margin-bottom: 10px;
+        padding: 12px 5px;
+        position: relative;
+        @include mq(phablet) {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+    textarea {
+        overflow: auto;
+    }
+    hr {
+        border-top: 1px solid $color-gray-dark;
+        width: 100%;
+    }
+    .icon-triangle-down {
+        font-size: 9px;
+        position: absolute;
+        right: 5px;
+        top: 17px;
+        z-index: $zIndex-2;
+        @include mq(phablet) {
+            right: 10px;
+            top: 20px;
+        }
+        &:before {
+            color: $color-gray-light;
+        }
+    }
+    input {
+        border: 1px solid $color-gray-light;
+        padding: 12px 20px;
+        @include mq(phablet) {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+    .width-100 {
+        width: 100%;
+    }
+    .width-95 {
+        width: 95%;
+    }
+    .width-90 {
+        width: 90%;
+    }
+    .width-85 {
+        width: 85%;
+    }
+    .width-80 {
+        width: 80%;
+    }
+    .width-75 {
+        width: 75%;
+    }
+    .width-70 {
+        width: 70%;
+    }
+    .width-65 {
+        width: 65%;
+    }
+    .width-60 {
+        width: 60%;
+    }
+    .width-55 {
+        width: 55%;
+    }
+    .width-50 {
+        width: 50%;
+    }
+    .width-45 {
+        width: 45%;
+    }
+    .width-40 {
+        width: 40%;
+    }
+    .width-35 {
+        width: 35%;
+    }
+    .width-30 {
+        width: 30%;
+    }
+    .width-25 {
+        width: 25%;
+    }
+    .width-20 {
+        width: 20%;
+    }
+    .width-15 {
+        width: 15%;
+    }
+    .width-10 {
+        width: 10%;
+    }
+    .width-5 {
+        width: 5%;
+    }
+    .input-left {
+        float: left;
+    }
+    .input-right {
+        float: right;
+    }
+    input[type="checkbox"] {
+        appearance: none;
+        border: 0;
+        display: inline-block;
+        font-family: $font-icon;
+        height: 14px;
+        margin-right: 5px;
+        padding: 0;
+        position: relative;
+        width: 14px;
+        &:after {
+            content: "\ea53";
+            display: block;
+            font-family: $font-icon;
+            height: 14px;
+            left: 0;
+            position: absolute;
+            top: 2px;
+            width: 14px;
+        }
+        &:checked {
+            &:after {
+                content: "\ea52";
+            }
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+    .icon-input {
+        left: 20px;
+        position: absolute;
+        top: 40px;
+        &:before {
+            font-size: 22px;
+        }
+        & + input {
+            text-indent: 20px;
+        }
+    }
+    .label-checkbox {
+        margin-right: 10px;
+    }
+    .link-add {
+        color: $color-orange1;
+        cursor: pointer;
+        float: right;
+        text-align: right;
+        a {
+            padding-left: 0;
+            text-decoration: none;
+            @include mq(tablet) {
+                padding-left: 10px;
+            }
+        }
+    }
+    &.buttons-row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        width: 100%;
+        .button {
+            flex: 1 1 0;
+            line-height: 1.2;
+            margin: 0 10px;
+            &:first-child {
+                margin-left: 0;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+.row-time-period {
+    input {
+        padding: 11px 0;
+        &:focus {
+            outline: none;
+        }
+    }
+    .row-inner {
+        border: 1px solid $color-gray-light;
+        padding: 0 0 0 15px;
+    }
+    .edit-profile-input {
+        border: 0;
+    }
+}

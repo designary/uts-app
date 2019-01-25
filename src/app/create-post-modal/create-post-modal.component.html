@@ -1,0 +1,19 @@
+<div [@dialog] *ngIf="visible">
+    <div class="create-post-modal">
+        <form>
+            <div class="row">
+                <textarea class="comment-box width-100" value="" aria-label="" rows="3" cols="40" max-length="200" autocomplete="off" aria-autocomplete="true" placeholder="Share something..."></textarea>
+            </div>
+            <div class="row">
+                <div class="input-location-label">At</div>
+                <div class="icon icon-remove"></div>
+                <input class="width-100 input-location" value="" aria-label="Name" maxlength="40" autocomplete="off" aria-autocomplete="true" placeholder="Where are you?" />
+            </div>
+            <div class="row">
+                <div class="tags">Tags</div>
+                <button *ngIf="closable" (click)="close()" aria-label="Save" class="button button-share button-orange">Share</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div *ngIf="visible" class="backdrop"></div>

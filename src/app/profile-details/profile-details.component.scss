@@ -1,0 +1,118 @@
+@charset "UTF-8";
+
+// Variables & Mixins
+@import '~styles/partials/fonts';
+@import '~styles/partials/variables';
+@import '~styles/partials/mixins';
+@import '~styles/partials/images';
+
+/* Section Profile Details. */
+.profile-block {
+    padding-bottom: 20px;
+}
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    @include mq(tablet-wide) {
+        flex-direction: row;
+    }
+}
+.profile-info-text,
+.profile-info-see-more {
+    padding-left: 12%;
+}
+.profile-info-see-more {
+    display: inline-block;
+    font-style: italic;
+    padding-bottom: 10px;
+}
+.profile-pic {
+    margin: 0 auto 20px;
+    text-align: center;
+    @include mq(tablet) {
+        flex: 2;
+        margin-left: 0;
+        text-align: left;
+    }
+    @include mq(tablet-wide) {
+        margin: 0;
+    }
+    img {
+        border-radius: 50%;
+        box-shadow: 3px 3px 5px 0 rgba($color-gray-base, 0.65);
+        display: block;
+        float: left;
+        height: 140px;
+        overflow: hidden;
+        width: 140px;
+        @include mq(tablet) {
+            margin-right: 20px;
+        }
+    }
+}
+.profile-details {
+    display: block;
+    flex: 5;
+    text-align: center;
+    @include mq(tablet) {
+        text-align: left;
+     }
+    .profile-name {
+        font-size: 28px;
+        font-weight: 700;
+        margin-top: 0;
+    }
+    .profile-title,
+    .profile-year {
+        color: $color-gray-darker;
+        font-style: italic;
+        padding-bottom: 10px;
+    }
+    .profile-location {
+        span {
+            color: $color-gray-darker;
+        }
+    }
+}
+.profile-connect {
+    .connect-info {
+        line-height: 1.8;
+        list-style: none;
+        padding-left: 12%;
+        a {
+            color: $color-gray-darker;
+        }
+        .connect-label {
+            display: inline-block;
+            font-style: italic;
+            font-weight: bold;
+            width: 30px;
+        }
+    }
+}
+.profile-subheader {
+    color: $color-white;
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 20px;
+    padding: 3px 0 5px 12%;
+    width: 100%;
+    &.connect,
+    &.seeking {
+        background-color: $color-blue1;
+    }
+    &.bio,
+    &.tribes {
+        background-color: $color-orange2;
+    }
+}
+.profile-tribes {
+    ul {
+        list-style: none;
+        padding-left: 12%;
+        li {
+            padding-bottom: 20px;
+        }
+    }
+}

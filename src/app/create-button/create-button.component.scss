@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+// Variables & Mixins
+@import '~styles/partials/fonts';
+@import '~styles/partials/variables';
+@import '~styles/partials/mixins';
+@import '~styles/partials/images';
+
+.block-create {
+    display: inline-block;
+    margin-bottom: 15px;
+    text-decoration: none;
+    width: 100%;
+    @include mq(phablet) {
+        display: block;
+    }
+    &:hover {
+        cursor: pointer;
+    }
+    &.show-expand {
+        .create-text {
+            display: none;
+        }
+    }
+    .icon-plus-circle {
+        color: $color-gray-base;
+        display: inline-block;
+        font-size: 60px;
+        vertical-align: middle;
+        @include mq(phablet) {
+            font-size: 65px;
+            margin: 0 0 0 5px;
+        }
+    }
+    .create-text {
+        display: inline-block;
+        font-size: 16px;
+        padding-left: 5px;
+        text-transform: uppercase;
+        vertical-align: middle;
+        @include mq(phablet) {
+            display: block;
+            margin: 5px 0 0 10px;
+            padding: 0;
+        }
+    }
+}
+.create-post-buttons {
+    left: 0;
+    position: absolute;
+    top: 0;
+    @include mq(phablet) {
+        left: 5px;
+    }
+    .icon {
+        background-color: $color-gray-dark;
+        border-radius: 50%;
+        color: $color-white;
+        display: inline-block;
+        font-size: 24px;
+        font-weight: $weight-bold;
+        height: 56px;
+        margin: 0 auto 20px;
+        padding: 13px;
+        text-align: center;
+        width: 56px;
+        @include mq(phablet) {
+            display: block;
+        }
+        &:first-child {
+            font-size: 28px;
+            font-weight: $weight-bold;
+            height: 64px;
+            padding: 19px;
+            width: 64px;
+        }
+        &:nth-child(2) {
+            padding: 15px 12px 11px 13px;
+        }
+        &:last-child {
+            font-size: 28px;
+            margin-bottom: 0;
+            padding-top: 14px;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
